@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://screinac.github.io',
-    base: '/lifevisor-website',
+
+    site: 'https://lifevisorapp.com',
 
     vite: {
         plugins: [tailwindcss()],
