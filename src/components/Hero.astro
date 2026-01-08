@@ -1,34 +1,61 @@
 ---
 import { Image } from "astro:assets";
-import hero from "../assets/hero.png";
+import hero1 from "../assets/hero.png";
+import bg1 from "../assets/hero-bg-1.png";
+import bg2 from "../assets/hero-bg-2.png";
 ---
 
 <div>
 	<main>
-		<section class="px-20">
+		<section>
+			<Image
+				src={bg1}
+				class={"absolute top-35"}
+				layout="constrained"
+				width={350}
+				alt="Fondo del hero"
+			/>
+
+			<Image
+				src={bg2}
+				class={"absolute top-75 right-0"}
+				layout="constrained"
+				width={300}
+				alt="Fondo del hero"
+			/>
+
 			<div
-				class="flex py-25 px-20 glass bg-white/10 border border-white/50 rounded-[80px]"
+				class="glass bg-white/10 pt-18 pb-15 border border-white/50 rounded-b-[50px] px-12 justify-center flex flex-col"
 			>
-				<div>
-					<h2
-						class="text-white text-6xl font-bold tracking-wide max-w-lg"
-					>
-						Be mindful of your
-						<span class="font-normal tracking-[.25em]"> time </span>
-					</h2>
-					<p>
-						Stop living on autopilot and start experiencing every
-						moment with Life Visor — your guide to a more mindful
-						day.
-					</p>
-				</div>
+				<h2
+					class="mb-10 text-white text-3xl font-bold tracking-wide max-w-lg text-center"
+				>
+					Be
+					<span class="italic font-normal">mindful</span>
+
+					of your <br />
+					<span class="font-normal tracking-[.65em]"> time </span>
+				</h2>
 				<Image
-					src={hero}
+					src={hero1}
 					layout="constrained"
 					width={414}
 					height={442}
 					alt="Smartphone running the Life Visor app, showing the main screen."
 				/>
+
+				<button
+					class="bg-[#24333F] text-white mx-auto text-lg text-center opacity-80 px-8 py-3 rounded-full mt-15 tracking-[.3em]"
+					>COMING SOON</button
+				>
+			</div>
+			<div>
+				<p
+					class="opacity-80 text-[#E4EAF0] text-center px-12 text-xl py-10"
+				>
+					Stop living on autopilot and start experiencing every moment
+					with Life Visor — your guide to a more mindful day.
+				</p>
 			</div>
 		</section>
 	</main>
@@ -36,6 +63,6 @@ import hero from "../assets/hero.png";
 
 <style>
 	.glass {
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(10px);
 	}
 </style>
