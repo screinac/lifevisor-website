@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="px-6 pb-10">
+	<!-- <div
+		class="bg-[#CFACAD] py-4 px-10 rounded-full border-white/50 border glass"
+	>
+		<p
+			class="text-sm text-white opacity-[0.8] text-shadow-lg tracking-[.25em]"
+		>
+			HOME
+		</p>
+	</div> -->
+
+	<div
+		class="bg-[#E4EAF0] shadow-lg flex flex-col items-center pt-8 pb-12 px-9 rounded-4xl"
+	>
+		<Icon name="check" size={75} />
+		<h3 class="text-4xl text-[#24333F] opacity-80 mt-10 font-normal">
+			Track <span class="font-bold">your</span> time
+		</h3>
+		<p class="mt-7 text-xl text-[#24333F] text-center opacity-60">
+			Create your daily activities or new habits you want to build in your
+			life. Track your progress!
+		</p>
+	</div>
+
+	<div
+		class="mt-6 bg-[#CFACAD] shadow-lg flex flex-col items-center pt-8 pb-12 px-9 rounded-4xl"
+	>
+		<Icon name="gear" size={75} />
+		<h3 class="text-4xl text-white opacity-80 mt-7 font-normal">
+			Follow <span class="font-bold">Up</span>
+		</h3>
+		<p class="mt-7 text-xl text-white text-center opacity-60">
+			Get motivated when starting an activity and beat your own goals by
+			becoming aware of your time.
+		</p>
+	</div>
+
+	<div
+		class="mt-6 bg-[#374C5F] shadow-lg flex flex-col items-center pt-8 pb-12 px-9 rounded-4xl"
+	>
+		<Icon name="signal" size={82} />
+		<h3
+			class="text-4xl/13 text-white opacity-80 mt-2 font-normal text-center"
+		>
+			Analyze <br />
+			<span class="font-bold"> Enjoy!</span>
+		</h3>
+		<p class="mt-7 text-xl text-white text-center opacity-60">
+			Analyze how you spend your time in each area of your life. Are you
+			working too much? Missing your family? Get to know yourself.
+		</p>
+	</div>
+</div>
+
+<style>
+	.glass {
+		backdrop-filter: blur(5px);
+	}
+</style>
