@@ -5,29 +5,31 @@ import bg from "../assets/benefits-bg.png";
 import img1 from "../assets/benefits1.png";
 ---
 
-<div class="px-6 pb-60 relative flex flex-col items-center">
+<div class="relative flex flex-col items-center">
 	<Image
 		src={bg}
-		class={"absolute w-full left-0 -z-10"}
+		class={"w-full left-0 -z-10"}
 		layout="constrained"
 		width={300}
 		alt="Fondo del hero"
 	/>
-	<h3 class="text-4xl text-center font-bold pt-20">
-		BENEFITS
-		<br />
-		<span class="italic font-normal">using</span>
-		LIFE VISOR
-	</h3>
+	<div class="absolute">
+		<h3 class="text-4xl text-center font-bold pt-25">
+			BENEFITS
+			<br />
+			<span class="italic font-normal">using</span>
+			LIFE VISOR
+		</h3>
 
-	<div>
-		<Image
-			src={img1}
-			class={""}
-			layout="constrained"
-			width={300}
-			alt="Fondo del hero"
-		/>
+		<div>
+			<Image
+				src={img1}
+				class={""}
+				layout="constrained"
+				width={300}
+				alt="Fondo del hero"
+			/>
+		</div>
 	</div>
 </div>
 
