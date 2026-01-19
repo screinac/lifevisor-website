@@ -3,9 +3,12 @@ import { Icon } from "astro-icon/components";
 import Image from "astro/components/Image.astro";
 import bg from "../assets/benefits-bg.png";
 import img1 from "../assets/benefits1.png";
+import img2 from "../assets/benefits2.png";
+import img3 from "../assets/benefits3.png";
+import img4 from "../assets/benefits4.png";
 ---
 
-<div class="relative flex flex-col">
+<div class="relative flex flex-col overflow-hidden">
 	<Image
 		src={bg}
 		class={"w-full left-0 "}
@@ -13,6 +16,7 @@ import img1 from "../assets/benefits1.png";
 		width={300}
 		alt="Fondo del hero"
 	/>
+
 	<div class="absolute w-screen">
 		<h3 class="text-4xl text-center font-bold pt-25">
 			BENEFITS
@@ -20,27 +24,91 @@ import img1 from "../assets/benefits1.png";
 			<span class="italic font-normal">using</span>
 			LIFE VISOR
 		</h3>
+		<button id="prev" class="absolute top-1/2 left-4 z-40">
+			<Icon name="arrow-left" size={30} />
+		</button>
+		<button id="next" class="absolute top-1/2 right-4 z-40">
+			<Icon name="arrow-right" size={30} />
+		</button>
 
-		<div class="flex">
-			<div class="w-screen flex flex-col items-center">
-				<Image
-					src={img1}
-					class={""}
-					layout="constrained"
-					width={300}
-					alt="Fondo del hero"
-				/>
-				<p>hola</p>
+		<div id="slider-track" class="w-full flex gallery-container">
+			<!-- slide 1 -->
+			<div class="w-screen shrink-0">
+				<div class="flex flex-col items-center">
+					<Image
+						src={img1}
+						class={""}
+						layout="constrained"
+						width={300}
+						alt="Fondo del hero"
+					/>
+				</div>
 			</div>
-			<div class="w-screen">
-				<Image
-					src={img1}
-					class={""}
-					layout="constrained"
-					width={300}
-					alt="Fondo del hero"
-				/>
-				<p>hola</p>
+			<!-- slide 2 -->
+			<div class="w-screen shrink-0">
+				<div class="flex flex-col items-center">
+					<Image
+						src={img2}
+						class={""}
+						layout="constrained"
+						width={250}
+						alt="Fondo del hero"
+					/>
+					<h3
+						class="text-4xl tracking-[.55em] ml-4 text-[#24333F] opacity-80 text-shadow-md"
+					>
+						Focus
+					</h3>
+					<p class="px-10 text-center text-lg mt-2 opacity-60">
+						With Life Visor, staying focused becomes easier. You
+						enter a state called “flow” — knowing you’re tracking an
+						activity motivates you to keep going for longer.
+					</p>
+				</div>
+			</div>
+			<!-- slide 3 -->
+			<div class="w-screen shrink-0">
+				<div class="flex flex-col items-center">
+					<Image
+						src={img3}
+						class={""}
+						layout="constrained"
+						width={250}
+						alt="Fondo del hero"
+					/>
+					<h3
+						class="text-4xl tracking-[.55em] ml-4 text-[#24333F] opacity-80 text-shadow-md"
+					>
+						Enjoy
+					</h3>
+					<p class="px-10 text-center text-lg mt-2 opacity-60">
+						In Life Visor, you can create any activity you want —
+						work, dance, friends, family, and more. Make the most of
+						your time to do everything you love.
+					</p>
+				</div>
+			</div>
+			<!-- slide 4 -->
+			<div class="w-screen shrink-0">
+				<div class="flex flex-col items-center">
+					<Image
+						src={img4}
+						class={""}
+						layout="constrained"
+						width={250}
+						alt="Fondo del hero"
+					/>
+					<h3
+						class="text-4xl tracking-[.55em] ml-4 text-[#24333F] opacity-80 text-shadow-md"
+					>
+						Meaning
+					</h3>
+					<p class="px-10 text-center text-lg mt-2 opacity-60">
+						Do you ever feel like life is passing you by? We’ve felt
+						that too — that’s why we created this app: to help you
+						find purpose, reflect, and grow to reach your goals.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -50,6 +118,47 @@ import img1 from "../assets/benefits1.png";
 	.glass {
 		backdrop-filter: blur(5px);
 	}
+	.gallery-container {
+		transition: transform 0.5s ease-in-out;
+	}
 </style>
 
-<script></script>
+<script>
+	let currentSlide = 0;
+	const totalSlides = 4;
+	const ANIMATION_DURATION = 700; // ms
+	let isAnimating = false;
+
+	const track = document.getElementById("slider-track") as HTMLElement | null;
+	const nextBtn = document.getElementById("next") as HTMLButtonElement | null;
+	const prevBtn = document.getElementById("prev") as HTMLButtonElement | null;
+
+	if (!track || !nextBtn || !prevBtn) {
+		throw new Error("Slider elements not found");
+	}
+
+	function updateSlider() {
+		if (!track) {
+			throw new Error("Slider elements not found");
+		}
+		isAnimating = true;
+		track.style.transform = `translateX(-${currentSlide * 100}vw)`;
+		setTimeout(() => {
+			isAnimating = false;
+		}, ANIMATION_DURATION);
+	}
+
+	nextBtn.addEventListener("click", () => {
+		if (isAnimating) return;
+
+		currentSlide = (currentSlide + 1) % totalSlides;
+		updateSlider();
+	});
+
+	prevBtn.addEventListener("click", () => {
+		if (isAnimating) return;
+
+		currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+		updateSlider();
+	});
+</script>
