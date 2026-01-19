@@ -42,29 +42,29 @@ import img from "../assets/download.png";
 	.glass {
 		backdrop-filter: blur(5px);
 	}
-	@keyframes horizontal-shaking {
+	@keyframes diagonal-shaking {
 		0% {
-			transform: translateX(0);
+			transform: translate(0, 0) rotate(0deg);
 		}
 		20% {
-			transform: translateX(2px);
+			transform: translate(2px, -2px) rotate(2deg);
 		}
 		40% {
-			transform: translateX(-2px);
+			transform: translate(-2px, 2px) rotate(-2deg);
 		}
 		60% {
-			transform: translateX(2px);
+			transform: translate(2px, -2px) rotate(2deg);
 		}
 		80% {
-			transform: translateX(-2px);
+			transform: translate(-2px, 2px) rotate(-2deg);
 		}
 		100% {
-			transform: translateX(0);
+			transform: translate(0, 0) rotate(0deg);
 		}
 	}
 
 	.shake-once {
-		animation: horizontal-shaking 0.4s ease-in-out 2;
+		animation: diagonal-shaking 0.4s ease-in-out 3;
 	}
 </style>
 

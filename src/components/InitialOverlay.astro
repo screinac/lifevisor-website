@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 
 <div
 	id="overlay"
-	class="overlay z-30 fixed inset-0 flex flex-col items-center justify-center bg-[#121920]"
+	class="overlay h-100vh z-30 fixed inset-0 flex flex-col items-center justify-center bg-[#121920]"
 >
 	<div
 		class="w-16 h-16 border-4 border-[#F5F6F7] opacity-50 rounded-full animate-spin"
@@ -31,8 +31,8 @@ import { Icon } from "astro-icon/components";
 		setTimeout(() => {
 			overlay.style.display = "none";
 			document.body.style.overflow = ""; // restaurar scroll
-		}, 600); // debe coincidir con el transition
-	}, 650);
+		}, 700); // debe coincidir con el transition
+	}, 700);
 </script>
 
 <style>
