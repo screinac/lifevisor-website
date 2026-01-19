@@ -27,17 +27,65 @@ import img from "../assets/download.png";
 		>COMING SOON</button
 	>
 
-	<Image
-		src={img}
-		class={"w-full z-10"}
-		layout="constrained"
-		width={300}
-		alt="Fondo del hero"
-	/>
+	<div class={"w-full z-10 shake-target"}>
+		<Image
+			src={img}
+			class={"w-full"}
+			layout="constrained"
+			width={300}
+			alt="Fondo del hero"
+		/>
+	</div>
 </div>
 
 <style>
 	.glass {
 		backdrop-filter: blur(5px);
 	}
+	@keyframes horizontal-shaking {
+		0% {
+			transform: translateX(0);
+		}
+		20% {
+			transform: translateX(2px);
+		}
+		40% {
+			transform: translateX(-2px);
+		}
+		60% {
+			transform: translateX(2px);
+		}
+		80% {
+			transform: translateX(-2px);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	.shake-once {
+		animation: horizontal-shaking 0.4s ease-in-out 2;
+	}
 </style>
+
+<script>
+	const target = document.querySelector(".shake-target");
+
+	if (target) {
+		const observer = new IntersectionObserver(
+			(entries, obs) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("shake-once");
+						obs.unobserve(entry.target); // 🔥 solo una vez
+					}
+				});
+			},
+			{
+				threshold: 0.5, // 50% visible
+			},
+		);
+
+		observer.observe(target);
+	}
+</script>

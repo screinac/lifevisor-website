@@ -5,7 +5,7 @@ import bg1 from "../assets/review-bg1.png";
 import bg2 from "../assets/review-bg2.png";
 ---
 
-<div class="px-6 pb-10 relative flex flex-col items-center">
+<div class="px-6 pb-10 relative flex flex-col items-center overflow-hidden">
 	<Image
 		src={bg1}
 		class={"absolute w-90 right-0"}
@@ -20,41 +20,144 @@ import bg2 from "../assets/review-bg2.png";
 		width={300}
 		alt="Fondo del hero"
 	/>
-	<h3 class="text-7xl mb-15 text-white font-bold text-center mt-12 z-10">
+	<h3
+		class="fade-in-section text-7xl mb-15 text-white font-bold text-center mt-12 z-10"
+	>
 		Our
 		<br />
 		<span class="font-normal tracking-[.3em] ml-3 text-6xl"> reviews </span>
 	</h3>
-	<div
-		class="glass h-130 pb-18 flex flex-col justify-between bg-[#F5F5F5]/70 py-12 border border-white/50 px-16 w-full rounded-[40px]"
-	>
-		<div>
-			<h5
-				class="text-2xl font-bold tracking-[.3em] text-[#24333F] text-shadow-lg opacity-80"
-			>
-				Habit
-				<br />
-				App
-			</h5>
-			<p class="mt-13 opacity-80 text-lg text-[#121920]">
-				I think there is no other app like this, but I don’t use it so
-				much.
-			</p>
-		</div>
-		<div class="flex justify-center">
-			<Icon name="star" size={25} />
-			<Icon name="star" size={25} />
-			<Icon name="star" size={25} />
-			<Icon name="star" size={25} />
-			<Icon name="star" size={25} />
+
+	<div class="relative w-screen">
+		<button id="prev-rev" class="absolute top-1/2 left-8 z-40">
+			<Icon name="arrow-left" size={30} />
+		</button>
+		<button id="next-rev" class="absolute top-1/2 right-8 z-40">
+			<Icon name="arrow-right" size={30} />
+		</button>
+		<div
+			id="slider-track-rev"
+			class="gallery-container flex gap-2 w-full px-[6vw]"
+		>
+			<!-- review 1 -->
+			<div class="w-full shrink-0">
+				<div
+					class="glass h-130 pb-18 flex flex-col justify-between bg-[#F5F5F5]/70 py-12 border border-white/50 px-16 rounded-[40px]"
+				>
+					<div>
+						<h5
+							class="text-2xl font-bold tracking-[.3em] text-[#24333F] text-shadow-lg opacity-80"
+						>
+							Habit
+							<br />
+							App
+						</h5>
+						<p class="mt-13 opacity-80 text-lg text-[#121920]">
+							I think there is no other app like this, but I don’t
+							use it so much.
+						</p>
+					</div>
+					<div class="flex justify-center">
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+					</div>
+				</div>
+			</div>
+
+			<!-- review 2 -->
+			<div class="w-full shrink-0">
+				<div
+					class="glass h-130 pb-18 flex flex-col justify-between bg-[#F5F5F5]/70 py-12 border border-white/50 px-16 rounded-[40px]"
+				>
+					<div>
+						<h5
+							class="text-2xl font-bold tracking-[.3em] text-[#24333F] text-shadow-lg opacity-80"
+						>
+							Habit
+							<br />
+							App
+						</h5>
+						<p class="mt-13 opacity-80 text-lg text-[#121920]">
+							I think there is no other app like this, but I don’t
+							use it so much.
+						</p>
+					</div>
+					<div class="flex justify-center">
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+					</div>
+				</div>
+			</div>
+
+			<!-- review 3 -->
+			<div class="w-full shrink-0">
+				<div
+					class="glass h-130 pb-18 flex flex-col justify-between bg-[#F5F5F5]/70 py-12 border border-white/50 px-16 rounded-[40px]"
+				>
+					<div>
+						<h5
+							class="text-2xl font-bold tracking-[.3em] text-[#24333F] text-shadow-lg opacity-80"
+						>
+							Habit
+							<br />
+							App
+						</h5>
+						<p class="mt-13 opacity-80 text-lg text-[#121920]">
+							I think there is no other app like this, but I don’t
+							use it so much.
+						</p>
+					</div>
+					<div class="flex justify-center">
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+					</div>
+				</div>
+			</div>
+
+			<!-- review 4 -->
+			<div class="w-full shrink-0">
+				<div
+					class="glass h-130 pb-18 flex flex-col justify-between bg-[#F5F5F5]/70 py-12 border border-white/50 px-16 rounded-[40px]"
+				>
+					<div>
+						<h5
+							class="text-2xl font-bold tracking-[.3em] text-[#24333F] text-shadow-lg opacity-80"
+						>
+							Habit
+							<br />
+							App
+						</h5>
+						<p class="mt-13 opacity-80 text-lg text-[#121920]">
+							I think there is no other app like this, but I don’t
+							use it so much.
+						</p>
+					</div>
+					<div class="flex justify-center">
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+						<Icon name="star" size={25} />
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="flex mt-5 gap-1">
-		<div class="h-2 w-2 rounded-full bg-[#121920]"></div>
-		<div class="h-2 w-2 rounded-full bg-[#121920] opacity-30"></div>
-		<div class="h-2 w-2 rounded-full bg-[#121920] opacity-30"></div>
-		<div class="h-2 w-2 rounded-full bg-[#121920] opacity-30"></div>
+	<div class="flex mt-5 gap-1" id="slider-dots">
+		<div class="dot h-2 w-2 rounded-full bg-[#121920]"></div>
+		<div class="dot h-2 w-2 rounded-full bg-[#121920] opacity-30"></div>
+		<div class="dot h-2 w-2 rounded-full bg-[#121920] opacity-30"></div>
+		<div class="dot h-2 w-2 rounded-full bg-[#121920] opacity-30"></div>
 	</div>
 </div>
 
@@ -62,4 +165,66 @@ import bg2 from "../assets/review-bg2.png";
 	.glass {
 		backdrop-filter: blur(5px);
 	}
+	.gallery-container {
+		transition: transform 0.5s ease-in-out;
+	}
 </style>
+
+<script>
+	let currentSlide = 0;
+	const totalSlides = 4;
+	const ANIMATION_DURATION = 500; // ms
+	let isAnimating = false;
+
+	const track = document.getElementById(
+		"slider-track-rev",
+	) as HTMLElement | null;
+	const nextBtn = document.getElementById(
+		"next-rev",
+	) as HTMLButtonElement | null;
+	const prevBtn = document.getElementById(
+		"prev-rev",
+	) as HTMLButtonElement | null;
+
+	if (!track || !nextBtn || !prevBtn) {
+		throw new Error("Slider elements not found");
+	}
+
+	const dots = document.querySelectorAll<HTMLDivElement>("#slider-dots .dot");
+
+	function updateDots() {
+		dots.forEach((dot, index) => {
+			if (index === currentSlide) {
+				dot.classList.remove("opacity-30");
+			} else {
+				dot.classList.add("opacity-30");
+			}
+		});
+	}
+
+	function updateSlider() {
+		if (!track) {
+			throw new Error("Slider elements not found");
+		}
+		isAnimating = true;
+		track.style.transform = `translateX(-${currentSlide * 90}vw)`;
+		updateDots();
+		setTimeout(() => {
+			isAnimating = false;
+		}, ANIMATION_DURATION);
+	}
+
+	nextBtn.addEventListener("click", () => {
+		if (isAnimating) return;
+
+		currentSlide = (currentSlide + 1) % totalSlides;
+		updateSlider();
+	});
+
+	prevBtn.addEventListener("click", () => {
+		if (isAnimating) return;
+
+		currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+		updateSlider();
+	});
+</script>
