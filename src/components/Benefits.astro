@@ -5,7 +5,7 @@ import bg from "../assets/benefits-bg.png";
 import img1 from "../assets/benefits1.png";
 ---
 
-<div class="relative flex flex-col items-center">
+<div class="relative flex flex-col">
 	<Image
 		src={bg}
 		class={"w-full left-0 "}
@@ -13,7 +13,7 @@ import img1 from "../assets/benefits1.png";
 		width={300}
 		alt="Fondo del hero"
 	/>
-	<div class="absolute">
+	<div class="absolute w-screen">
 		<h3 class="text-4xl text-center font-bold pt-25">
 			BENEFITS
 			<br />
@@ -21,14 +21,27 @@ import img1 from "../assets/benefits1.png";
 			LIFE VISOR
 		</h3>
 
-		<div>
-			<Image
-				src={img1}
-				class={""}
-				layout="constrained"
-				width={300}
-				alt="Fondo del hero"
-			/>
+		<div class="flex">
+			<div class="w-screen flex flex-col items-center">
+				<Image
+					src={img1}
+					class={""}
+					layout="constrained"
+					width={300}
+					alt="Fondo del hero"
+				/>
+				<p>hola</p>
+			</div>
+			<div class="w-screen">
+				<Image
+					src={img1}
+					class={""}
+					layout="constrained"
+					width={300}
+					alt="Fondo del hero"
+				/>
+				<p>hola</p>
+			</div>
 		</div>
 	</div>
 </div>
@@ -38,3 +51,5 @@ import img1 from "../assets/benefits1.png";
 		backdrop-filter: blur(5px);
 	}
 </style>
+
+<script></script>

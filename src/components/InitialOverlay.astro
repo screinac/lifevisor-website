@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+	id="overlay"
+	class="overlay z-30 fixed inset-0 flex flex-col items-center justify-center bg-[#121920]"
+>
+	<div
+		class="w-16 h-16 border-4 border-[#F5F6F7] opacity-50 rounded-full animate-spin"
+	>
+	</div>
+
+	<h1 class="text-[#F5F6F7] text-3xl opacity-80 tracking-[.4em] mt-10 ml-2">
+		Life Visor
+	</h1>
+</div>
+
+<script>
+	const overlay = document.getElementById("overlay");
+
+	// Bloquear scroll
+	document.body.style.overflow = "hidden";
+
+	// Mostrar 1 segundo
+	setTimeout(() => {
+		if (!overlay) return;
+		overlay.classList.add("fade-out");
+
+		// Esperar que termine la animación
+		setTimeout(() => {
+			overlay.style.display = "none";
+			document.body.style.overflow = ""; // restaurar scroll
+		}, 600); // debe coincidir con el transition
+	}, 500);
+</script>
+
+<style>
+	.overlay {
+		opacity: 1;
+		transition: opacity 0.6s ease;
+	}
+
+	.overlay.fade-out {
+		opacity: 0;
+		pointer-events: none;
+	}
+</style>
