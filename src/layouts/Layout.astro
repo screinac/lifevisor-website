@@ -16,7 +16,28 @@ import "@fontsource/istok-web";
 	</head>
 
 	<body>
-		<slot />
+		<div class="bg-[#5b7e9e]">
+			<slot />
+		</div>
+
+		<script>
+			const elementos =
+				document.getElementsByClassName("fade-in-section");
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("is-visible");
+						observer.unobserve(entry.target); // deja de observar
+					}
+				});
+			});
+
+			// Observar todos los elementos
+			Array.from(elementos).forEach((el) => {
+				observer.observe(el);
+			});
+		</script>
 	</body>
 
 	<style>
@@ -26,7 +47,7 @@ import "@fontsource/istok-web";
 			padding: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #5b7e9e;
+			background-color: #121920;
 			font-family: "Istok Web", sans-serif;
 			color: "#121920";
 		}
