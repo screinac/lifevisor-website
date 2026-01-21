@@ -24,40 +24,75 @@ import bg2 from "../assets/hero-bg-2.png";
 				alt="Fondo del hero"
 			/>
 
-			<div
-				class="glass bg-white/10 pt-18 pb-15 border border-white/50 rounded-b-[50px] px-12 justify-center flex flex-col"
-			>
-				<h2
-					class="mb-10 text-white text-3xl font-bold tracking-wide max-w-lg text-center"
+			<div class="md:px-[5vw] md:pb-[5vh]">
+				<div
+					class="glass bg-white/10 pt-18 pb-15 border border-white/50 rounded-b-[50px] md:rounded-[80px] md:pt-22 md:pb-20 px-12 md:justify-between md:px-[6vw] justify-center flex flex-col md:flex-row"
 				>
-					Be
-					<span class="italic font-normal">mindful</span>
+					<div>
+						<h2
+							class="mb-10 md:text-7xl md:text-left text-white text-3xl font-bold tracking-wide max-w-lg text-center"
+						>
+							Be
+							<span
+								class="italic md:not-italic md:font-bold font-normal"
+							>
+								mindful</span
+							>
 
-					of your <br />
-					<span class="font-normal tracking-[.65em]"> time </span>
-				</h2>
+							of your
+							<br class="md:hidden" />
+							<span
+								class="font-normal tracking-[.65em] md:tracking-[.3em]"
+							>
+								time
+							</span>
+						</h2>
+						<p
+							class="opacity-80 text-[#E4EAF0] text-xl hidden md:block max-w-lg"
+						>
+							Stop living on autopilot and start experiencing
+							every moment with Life Visor — your guide to a more
+							mindful day.
+						</p>
+						<div
+							class="flex gap-2 items-center justify-between mt-15"
+						>
+							<button
+								class="bg-[#24333F] text-white md:inline-block hidden text-lg text-center opacity-80 px-8 py-3 rounded-full tracking-[.3em]"
+								>COMING SOON</button
+							>
+							<p
+								class="opacity-80 text-[#E4EAF0] text-base hidden md:block max-w-55"
+							>
+								Leave uncertainty behind and live your life.
+							</p>
+						</div>
+					</div>
 
-				<Image
-					src={hero1}
-					class="fade-in-section"
-					layout="constrained"
-					width={414}
-					height={442}
-					alt="Smartphone running the Life Visor app, showing the main screen."
-				/>
+					<Image
+						src={hero1}
+						class="fade-in-section md:mr-16"
+						layout="constrained"
+						width={414}
+						height={442}
+						alt="Smartphone running the Life Visor app, showing the main screen."
+					/>
 
-				<button
-					class="bg-[#24333F] text-white mx-auto text-lg text-center opacity-80 px-8 py-3 rounded-full mt-15 tracking-[.3em]"
-					>COMING SOON</button
-				>
-			</div>
-			<div>
-				<p
-					class="opacity-80 text-[#E4EAF0] text-center px-12 text-xl py-10"
-				>
-					Stop living on autopilot and start experiencing every moment
-					with Life Visor — your guide to a more mindful day.
-				</p>
+					<button
+						class="bg-[#24333F] text-white mx-auto md:hidden text-lg text-center opacity-80 px-8 py-3 rounded-full mt-15 tracking-[.3em]"
+						>COMING SOON</button
+					>
+				</div>
+
+				<div class="md:hidden">
+					<p
+						class="opacity-80 text-[#E4EAF0] text-center px-12 text-xl py-10"
+					>
+						Stop living on autopilot and start experiencing every
+						moment with Life Visor — your guide to a more mindful
+						day.
+					</p>
+				</div>
 			</div>
 		</section>
 	</main>

@@ -2,20 +2,45 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<nav class="navbar py-5 px-10 flex items-center justify-between bg-[#CFACAD]">
-	<div class="h-8 w-8 border-2 border-[#E4EAF0] rounded-full shadow-md"></div>
-
-	<Icon name="menu" size={40} />
-
-	<!-- <div
-		class="bg-[#CFACAD] py-4 px-10 rounded-full border-white/50 border glass"
+<nav
+	class="navbar py-5 md:pb-7 md:justify-end md:px-[11vw] px-10 flex items-center justify-between bg-[#CFACAD] md:bg-transparent"
+>
+	<div
+		class="h-8 w-8 border-2 border-[#E4EAF0] rounded-full shadow-md md:hidden"
 	>
-		<p
-			class="text-sm text-white opacity-[0.8] text-shadow-lg tracking-[.25em]"
+	</div>
+
+	<Icon name="menu" size={40} class="md:hidden" />
+
+	<div class="hidden md:flex gap-5">
+		<div
+			class="bg-[#CFACAD] py-4 px-10 rounded-full border-white/50 border glass"
 		>
-			HOME
-		</p>
-	</div> -->
+			<p
+				class="text-sm text-white opacity-[0.8] text-shadow-lg tracking-[.25em]"
+			>
+				HOME
+			</p>
+		</div>
+		<div
+			class="bg-transparent py-4 px-10 rounded-full border-white/50 border glass"
+		>
+			<p
+				class="text-sm text-white opacity-[0.8] text-shadow-lg tracking-[.25em]"
+			>
+				CONTACT
+			</p>
+		</div>
+		<div
+			class="bg-transparent py-4 px-10 rounded-full border-white/50 border glass"
+		>
+			<p
+				class="text-sm text-white opacity-[0.8] text-shadow-lg tracking-[.25em]"
+			>
+				PRIVACY
+			</p>
+		</div>
+	</div>
 </nav>
 
 <style>

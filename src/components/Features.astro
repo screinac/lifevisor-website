@@ -2,52 +2,81 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="px-6 pb-15">
-	<!-- <div
-		class="bg-[#CFACAD] py-4 px-10 rounded-full border-white/50 border glass"
-	>
-		<p
-			class="text-sm text-white opacity-[0.8] text-shadow-lg tracking-[.25em]"
-		>
-			HOME
-		</p>
-	</div> -->
-
+<div class="px-6 pb-15 md:px-[12vw] md:py-10 md:flex md:justify-between">
+	<!-- slide 1 -->
 	<div
-		class="fade-in-section bg-[#E4EAF0] shadow-lg flex flex-col items-center py-[15vw] px-9 rounded-4xl"
+		class="fade-in-section bg-[#E4EAF0] md:bg-transparent md:max-w-xs shadow-lg md:shadow-none flex flex-col md:items-start items-center md:py-0 py-[15vw] px-9 md:px-0 rounded-4xl"
 	>
-		<Icon name="check" size={75} />
-		<h3 class="text-4xl text-[#24333F] opacity-80 mt-10 font-normal">
-			Track <span class="font-bold">your</span> time
-		</h3>
-		<p class="mt-7 text-xl text-[#24333F] text-center opacity-60">
+		<Icon name="check" size={75} class="md:hidden" />
+		<div class="md:flex">
+			<Icon
+				name="check-white"
+				size={35}
+				class="hidden md:block ml-2 mr-8"
+			/>
+			<h3
+				class="md:font-bold text-4xl md:text-lg text-[#24333F] md:text-[#E4EAF0] opacity-80 md:mt-2 mt-10 font-normal"
+			>
+				Track <span class="font-bold">your</span> time
+			</h3>
+		</div>
+		<p
+			class="mt-7 text-xl md:text-left md:text-lg text-[#24333F] md:text-[#E4EAF0] text-center opacity-60"
+		>
 			Create your daily activities or new habits you want to build in your
 			life. Track your progress!
 		</p>
 	</div>
 
+	<!-- slide 2 -->
 	<div
-		class="fade-in-section mt-6 bg-[#CFACAD] shadow-lg flex flex-col items-center py-[15vw] px-9 rounded-4xl"
+		class="mt-5 md:mt-0 fade-in-section bg-[#CFACAD] md:bg-transparent md:max-w-xs shadow-lg md:shadow-none flex flex-col md:items-start items-center md:py-0 py-[15vw] px-9 md:px-0 rounded-4xl"
 	>
-		<Icon name="gear" size={75} />
-		<h3 class="text-4xl text-white opacity-80 mt-7 font-normal">
-			Follow <span class="font-bold">Up</span>
-		</h3>
-		<p class="mt-7 text-xl text-white text-center opacity-60">
+		<Icon name="gear" size={75} class="md:hidden" />
+		<div class="md:flex">
+			<Icon
+				name="gear"
+				size={35}
+				class="hidden md:block ml-2 mr-8 md:opacity-80 md:ml-10"
+			/>
+			<h3
+				class="md:font-bold text-4xl md:text-lg text-white md:text-[#E4EAF0] opacity-80 md:mt-2 mt-10 font-normal"
+			>
+				Follow <span class="font-bold">Up</span>
+			</h3>
+		</div>
+		<p
+			class="mt-7 text-xl md:text-left md:text-lg text-white md:text-[#E4EAF0] text-center opacity-60"
+		>
 			Get motivated when starting an activity and beat your own goals by
 			becoming aware of your time.
 		</p>
 	</div>
 
+	<!-- slide 3 -->
 	<div
-		class="fade-in-section mt-6 bg-[#374C5F] shadow-lg flex flex-col items-center py-[15vw] px-9 rounded-4xl"
+		class="mt-5 md:mt-0 fade-in-section bg-[#374C5F] md:bg-transparent md:max-w-xs shadow-lg md:shadow-none flex flex-col md:items-start items-center md:py-0 py-[15vw] px-9 md:px-0 rounded-4xl"
 	>
-		<Icon name="signal" size={82} />
-		<h3 class="text-4xl/13 text-white mt-2 font-normal text-center">
-			Analyze <br />
-			<span class="font-bold"> Enjoy!</span>
-		</h3>
-		<p class="mt-7 text-xl text-white text-center opacity-60">
+		<Icon name="signal" size={75} class="md:hidden" />
+		<div class="md:flex">
+			<Icon
+				name="signal"
+				size={35}
+				class="hidden md:block ml-2 mr-8 md:ml-8"
+			/>
+			<h3
+				class="md:font-bold text-center md:text-left text-4xl md:text-lg text-white md:text-[#E4EAF0] opacity-80 md:mt-2 mt-10 font-normal"
+			>
+				Analyze
+				<br class="md:hidden" />
+				<span class="hidden md:inline-block">and</span>
+
+				<span class="font-bold">Enjoy!</span>
+			</h3>
+		</div>
+		<p
+			class="mt-7 text-xl md:text-left md:text-lg text-white md:text-[#E4EAF0] text-center opacity-60"
+		>
 			Analyze how you spend your time in each area of your life. Are you
 			working too much? Missing your family? Get to know yourself.
 		</p>

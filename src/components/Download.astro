@@ -6,7 +6,7 @@ import bg2 from "../assets/download-bg2.png";
 import img from "../assets/download.png";
 ---
 
-<div class="relative flex flex-col items-center">
+<div class="relative flex flex-col items-center overflow-hidden">
 	<Image
 		src={bg1}
 		class={"absolute w-full left-0"}
@@ -30,7 +30,7 @@ import img from "../assets/download.png";
 	<div class={"w-full z-10 shake-target"}>
 		<Image
 			src={img}
-			class={"w-full"}
+			class={"w-full z-10"}
 			layout="constrained"
 			width={300}
 			alt="Fondo del hero"
@@ -44,22 +44,22 @@ import img from "../assets/download.png";
 	}
 	@keyframes diagonal-shaking {
 		0% {
-			transform: translate(0, 0) rotate(0deg);
+			transform: scale(1.02) rotate(0deg);
 		}
 		20% {
-			transform: translate(2px, -2px) rotate(2deg);
+			transform: scale(1.02) rotate(2deg);
 		}
 		40% {
-			transform: translate(-2px, 2px) rotate(-2deg);
+			transform: scale(1.02) rotate(-2deg);
 		}
 		60% {
-			transform: translate(2px, -2px) rotate(2deg);
+			transform: scale(1.02) rotate(2deg);
 		}
 		80% {
-			transform: translate(-2px, 2px) rotate(-2deg);
+			transform: scale(1.02) rotate(-2deg);
 		}
 		100% {
-			transform: translate(0, 0) rotate(0deg);
+			transform: scale(1.02) rotate(0deg);
 		}
 	}
 

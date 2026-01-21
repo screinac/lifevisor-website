@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components";
+import Image from "astro/components/Image.astro";
+import img1 from "../assets/benefits1.png";
+import img2 from "../assets/benefits-desk.png";
+import bg from "../assets/benefits-desk-bg.png";
+---
+
+<div
+	class="hidden relative md:block bg-[#E4EAF0] mx-[5vw] rounded-[80px] pt-25 pb-20 pl-12 pr-35 mt-20"
+>
+	<Image
+		src={bg}
+		class={"absolute top-6 right-0"}
+		layout="constrained"
+		width={800}
+		alt="Fondo del hero"
+	/>
+	<div class="flex justify-between">
+		<div class="flex items-center flex-col">
+			<h2
+				class="text-[#24333F] text-3xl font-extrabold text-center tracking-wider text-shadow-md fade-in-section"
+			>
+				Discover the benefits of
+				<br />
+				using LIFE VISOR.
+			</h2>
+			<div class="relative fade-in-section">
+				<Image
+					src={img2}
+					class={"absolute -right-30 top-1/5 "}
+					layout="constrained"
+					width={250}
+					alt="Fondo del hero"
+				/>
+				<Image
+					src={img1}
+					class={""}
+					layout="constrained"
+					width={280}
+					alt="Fondo del hero"
+				/>
+			</div>
+		</div>
+		<div>
+			<!-- slide 1 -->
+			<div
+				class="glass bg-white/30 border border-white rounded-[60px] max-w-xl pl-20 pr-10 py-8 fade-in-section"
+			>
+				<h4
+					class="text-2xl opacity-60 tracking-[.4em] mb-2 text-shadow-md"
+				>
+					Focus
+				</h4>
+				<p class="text-lg opacity-60">
+					With Life Visor, staying focused becomes easier. You enter a
+					state called “flow” — knowing you’re tracking an activity
+					motivates you to keep going for longer.
+				</p>
+			</div>
+			<!-- slide 2 -->
+			<div
+				class="mt-10 glass bg-white/30 border border-white rounded-[60px] max-w-xl pl-20 pr-10 py-8 fade-in-section"
+			>
+				<h4
+					class="text-2xl opacity-60 tracking-[.4em] mb-2 text-shadow-md"
+				>
+					Enjoy
+				</h4>
+				<p class="text-lg opacity-60">
+					In Life Visor, you can create any activity you want — work,
+					dance, friends, family, and more. Make the most of your time
+					to do everything you love.
+				</p>
+			</div>
+			<!-- slide 3 -->
+			<div
+				class="mt-10 glass bg-white/30 border border-white rounded-[60px] max-w-xl pl-20 pr-10 py-8 fade-in-section"
+			>
+				<h4
+					class="text-2xl opacity-60 tracking-[.4em] mb-2 text-shadow-md"
+				>
+					Find meaning
+				</h4>
+				<p class="text-lg opacity-60">
+					Do you ever feel like life is passing you by? We’ve felt
+					that too — that’s why we created this app: to help you find
+					purpose, reflect, and grow to reach your goals.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.glass {
+		backdrop-filter: blur(5px);
+	}
+</style>
