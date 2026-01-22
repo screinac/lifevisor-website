@@ -7,7 +7,7 @@ import bg from "../assets/benefits-desk-bg.png";
 ---
 
 <div
-	class="hidden relative md:block bg-[#E4EAF0] mx-[5vw] rounded-[80px] pt-25 pb-20 pl-12 pr-35 mt-20"
+	class="hidden relative md:block bg-[#E4EAF0] mx-[5vw] rounded-[80px] pt-25 pb-20 pl-12 lg:pr-35 pr-10 mt-20"
 >
 	<Image
 		src={bg}
@@ -16,10 +16,10 @@ import bg from "../assets/benefits-desk-bg.png";
 		width={800}
 		alt="Fondo del hero"
 	/>
-	<div class="flex justify-between">
+	<div class="flex justify-between gap-10">
 		<div class="flex items-center flex-col">
 			<h2
-				class="text-[#24333F] text-3xl font-extrabold text-center tracking-wider text-shadow-md fade-in-section"
+				class="text-[#24333F] z-20 text-3xl font-extrabold text-center tracking-wider text-shadow-md fade-in-section"
 			>
 				Discover the benefits of
 				<br />
@@ -28,7 +28,7 @@ import bg from "../assets/benefits-desk-bg.png";
 			<div class="relative fade-in-section">
 				<Image
 					src={img2}
-					class={"absolute -right-30 top-1/5 "}
+					class={"absolute -right-30 top-1/5 hidden lg:block"}
 					layout="constrained"
 					width={250}
 					alt="Fondo del hero"
