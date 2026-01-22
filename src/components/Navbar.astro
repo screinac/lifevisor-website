@@ -11,7 +11,7 @@ import { Icon } from "astro-icon/components";
 	>
 		<div class="flex flex-col items-center justify-center h-full">
 			<button id="close-menu">
-				<Icon name="close" size={40} class="absolute top-10 right-10" />
+				<Icon name="close" size={50} class="absolute top-10 right-10" />
 			</button>
 			<button class="text-white text-2xl"> HOME </button>
 			<button class="text-white text-2xl mt-10"> CONTACT </button>
@@ -72,11 +72,17 @@ import { Icon } from "astro-icon/components";
 
 	if (menu && closeBtn && openBtn) {
 		closeBtn.addEventListener("click", () => {
+			// Cerrar
+			document.body.style.overflow = "";
+
 			menu.classList.add("hidden");
 			menu.classList.remove("fixed");
 		});
 
 		openBtn.addEventListener("click", () => {
+			// Abrir
+			document.body.style.overflow = "hidden";
+
 			menu.classList.add("fixed");
 			menu.classList.remove("hidden");
 		});

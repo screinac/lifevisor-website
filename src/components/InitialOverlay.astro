@@ -12,6 +12,7 @@ import { Icon } from "astro-icon/components";
 	</div>
 
 	<h1 class="text-[#F5F6F7] text-3xl opacity-80 tracking-[.4em] mt-10 ml-2">
+		<span class="hidden md:inline-block">Welcome to </span>
 		Life Visor
 	</h1>
 </div>
@@ -31,8 +32,8 @@ import { Icon } from "astro-icon/components";
 		setTimeout(() => {
 			overlay.style.display = "none";
 			document.body.style.overflow = ""; // restaurar scroll
-		}, 700); // debe coincidir con el transition
-	}, 700);
+		}, 1000); // debe coincidir con el transition
+	}, 1000);
 </script>
 
 <style>
