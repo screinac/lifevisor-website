@@ -16,8 +16,8 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-	<InitialOverlay />
-	<Navbar />
+	<!-- <InitialOverlay /> -->
+	<Navbar client:load />
 	<Hero />
 	<Features />
 	<Benefits client:load />

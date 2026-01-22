@@ -6,11 +6,27 @@ import { Icon } from "astro-icon/components";
 	class="navbar py-5 md:pb-7 md:justify-end md:px-[11vw] px-10 flex items-center justify-between bg-[#CFACAD] md:bg-transparent"
 >
 	<div
+		id="menu"
+		class="hidden overlay h-100vh z-30 fixed inset-0 bg-[#121920]"
+	>
+		<div class="flex flex-col items-center justify-center h-full">
+			<button id="close-menu">
+				<Icon name="close" size={40} class="absolute top-10 right-10" />
+			</button>
+			<button class="text-white text-2xl"> HOME </button>
+			<button class="text-white text-2xl mt-10"> CONTACT </button>
+			<button class="text-white text-2xl mt-10"> PRIVACY </button>
+		</div>
+	</div>
+
+	<div
 		class="h-8 w-8 border-2 border-[#E4EAF0] rounded-full shadow-md md:hidden"
 	>
 	</div>
 
-	<Icon name="menu" size={40} class="md:hidden" />
+	<button id="open-menu" class="md:hidden">
+		<Icon name="menu" size={40} />
+	</button>
 
 	<div class="hidden md:flex gap-5">
 		<div
@@ -48,3 +64,21 @@ import { Icon } from "astro-icon/components";
 		backdrop-filter: blur(5px);
 	}
 </style>
+
+<script>
+	const menu = document.getElementById("menu");
+	const closeBtn = document.getElementById("close-menu");
+	const openBtn = document.getElementById("open-menu");
+
+	if (menu && closeBtn && openBtn) {
+		closeBtn.addEventListener("click", () => {
+			menu.classList.add("hidden");
+			menu.classList.remove("fixed");
+		});
+
+		openBtn.addEventListener("click", () => {
+			menu.classList.add("fixed");
+			menu.classList.remove("hidden");
+		});
+	}
+</script>
