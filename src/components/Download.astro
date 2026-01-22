@@ -9,28 +9,28 @@ import img from "../assets/download.png";
 <div class="relative flex flex-col items-center overflow-hidden">
 	<Image
 		src={bg1}
-		class={"absolute w-full left-0"}
+		class={"absolute w-full left-0 md:hidden"}
 		layout="constrained"
 		width={300}
 		alt="Fondo del hero"
 	/>
 	<Image
 		src={bg2}
-		class={"absolute w-20 left-0 top-125"}
+		class={"absolute w-20 left-0 top-125 md:hidden"}
 		layout="constrained"
 		width={300}
 		alt="Fondo del hero"
 	/>
 
 	<button
-		class="bg-[#24333F] text-white mx-auto text-lg text-center opacity-80 px-8 py-3 rounded-full mt-15 tracking-[.3em]"
+		class="fade-in-section z-20 bg-[#24333F] md:mt-30 md:px-40 md:mb-20 text-white mx-auto text-lg text-center opacity-80 px-8 py-3 rounded-full mt-15 tracking-[.3em]"
 		>COMING SOON</button
 	>
 
 	<div class={"w-full z-10 shake-target"}>
 		<Image
 			src={img}
-			class={"w-full z-10"}
+			class={"w-full z-10 md:hidden"}
 			layout="constrained"
 			width={300}
 			alt="Fondo del hero"

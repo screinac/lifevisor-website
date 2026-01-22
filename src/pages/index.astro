@@ -7,6 +7,7 @@ import Features from "../components/Features.astro";
 import Benefits from "../components/Benefits.astro";
 import BenefitsDesk from "../components/BenefitsDesk.astro";
 import Reviews from "../components/Reviews.astro";
+import ReviewsDesk from "../components/ReviewsDesk.astro";
 import Download from "../components/Download.astro";
 import Footer from "../components/Footer.astro";
 
@@ -15,13 +16,14 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-	<InitialOverlay />
+	<!-- <InitialOverlay /> -->
 	<Navbar />
 	<Hero />
 	<Features />
 	<Benefits client:load />
 	<BenefitsDesk />
 	<Reviews client:load />
+	<ReviewsDesk />
 	<Download />
 	<Footer />
 </Layout>

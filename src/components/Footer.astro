@@ -2,28 +2,54 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="bg-[#121920] pt-10 pb-13 px-13 text-[#E4EAF0]">
-	<div class="flex gap-2 mb-9">
-		<div class="w-7 h-7 border-2 border-[#E4EAF0] rounded-full"></div>
-		<h2 class="ml-2 mt-0.5 text-lg opacity-80 tracking-[.45em]">
-			Life Visor
-		</h2>
+<div
+	class="bg-[#121920] pt-10 pb-13 px-13 text-[#E4EAF0] md:flex md:items-center md:justify-between md:pt-17 md:pb-17 md:px-20"
+>
+	<div>
+		<div class="flex gap-2 mb-9">
+			<div
+				class="w-7 h-7 border-2 border-[#E4EAF0] rounded-full md:w-11 md:h-11"
+			>
+			</div>
+			<h2
+				class="ml-2 mt-0.5 text-lg opacity-80 tracking-[.45em] md:mt-3 md:ml-4"
+			>
+				Life Visor
+			</h2>
+		</div>
+		<div class="gap-3 hidden md:flex md:justify-between">
+			<Icon name="facebook" size={26} />
+			<Icon name="instagram" size={26} />
+			<Icon name="mail" size={26} />
+		</div>
 	</div>
 
 	<div class="flex items-end justify-between">
 		<div class="flex flex-col items-start">
-			<p class="text-xl font-bold">Menu</p>
-			<button class="mt-6 text-sm opacity-70 tracking-[.4em]">
-				Privacy
+			<p class="text-xl font-bold md:hidden">Menu</p>
+			<!-- button 1 -->
+			<button class="mt-6 text-sm opacity-70 tracking-[.4em] md:w-md">
+				<div class="flex items-center md:justify-between">
+					<p>Privacy</p>
+					<Icon name="select" size={30} class="hidden md:block" />
+				</div>
 			</button>
-			<button class="mt-6 text-sm opacity-70 tracking-[.4em]">
-				Download
+			<!-- button 2 -->
+			<button class="mt-6 text-sm opacity-70 tracking-[.4em] md:w-md">
+				<div class="flex items-center md:justify-between">
+					<p>Download</p>
+					<Icon name="select" size={30} class="hidden md:block" />
+				</div>
 			</button>
-			<button class="mt-6 text-sm opacity-70 tracking-[.4em]">
-				Contact
+			<!-- button 3 -->
+			<button class="mt-6 text-sm opacity-70 tracking-[.4em] md:w-md">
+				<div class="flex items-center md:justify-between">
+					<p>Contact</p>
+					<Icon name="select" size={30} class="hidden md:block" />
+				</div>
 			</button>
 		</div>
-		<div class="flex gap-3">
+		<div class="flex gap-3 md:hidden">
 			<Icon name="facebook" size={26} />
 			<Icon name="instagram" size={26} />
 			<Icon name="mail" size={26} />
