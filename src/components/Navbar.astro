@@ -13,9 +13,9 @@ import { Icon } from "astro-icon/components";
 			<button id="close-menu">
 				<Icon name="close" size={50} class="absolute top-10 right-10" />
 			</button>
-			<button class="text-white text-2xl"> HOME </button>
-			<button class="text-white text-2xl mt-10"> CONTACT </button>
-			<button class="text-white text-2xl mt-10"> PRIVACY </button>
+			<a href="/" class="text-white text-2xl"> HOME </a>
+			<a href="/" class="text-white text-2xl mt-10"> CONTACT </a>
+			<a href="/privacy" class="text-white text-2xl mt-10"> PRIVACY </a>
 		</div>
 	</div>
 
@@ -29,7 +29,8 @@ import { Icon } from "astro-icon/components";
 	</button>
 
 	<div class="hidden md:flex gap-5">
-		<div
+		<a
+			href="/"
 			class="bg-[#CFACAD] py-4 px-10 rounded-full border-white/50 border glass"
 		>
 			<p
@@ -37,8 +38,9 @@ import { Icon } from "astro-icon/components";
 			>
 				HOME
 			</p>
-		</div>
-		<div
+		</a>
+		<a
+			href="/"
 			class="bg-transparent py-4 px-10 rounded-full border-white/50 border glass"
 		>
 			<p
@@ -46,8 +48,9 @@ import { Icon } from "astro-icon/components";
 			>
 				CONTACT
 			</p>
-		</div>
-		<div
+		</a>
+		<a
+			href="/privacy"
 			class="bg-transparent py-4 px-10 rounded-full border-white/50 border glass"
 		>
 			<p
@@ -55,7 +58,7 @@ import { Icon } from "astro-icon/components";
 			>
 				PRIVACY
 			</p>
-		</div>
+		</a>
 	</div>
 </nav>
 
