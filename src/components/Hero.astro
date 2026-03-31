@@ -105,19 +105,18 @@ const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsig
 
 					<!-- Mobile badges -->
 					<div
-						class="flex gap-3 items-end justify-center mx-auto md:hidden mt-15 flex-wrap"
+						class="flex gap-3 items-end justify-center mx-auto md:hidden mt-15 flex-wrap w-full px-10"
 					>
 						<a
 							id="badge-appstore-mobile"
 							href={APP_STORE_URL}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="transition-opacity hover:opacity-80"
+							class="transition-opacity hover:opacity-80 w-full"
 						>
 							<img
 								src={badgeAppStore}
-								height="40"
-								style="height:50px;width:auto;display:block;"
+								style="width:100%;height:auto;display:block;"
 								alt="Download on the App Store"
 							/>
 						</a>
@@ -126,12 +125,11 @@ const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsig
 							href={PLAY_STORE_URL}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="transition-opacity hover:opacity-80"
+							class="transition-opacity hover:opacity-80 w-full"
 						>
 							<img
 								src={badgePlayStore}
-								height="40"
-								style="height:50px;width:auto;display:block;"
+								style="width:100%;height:auto;display:block;"
 								alt="Get it on Google Play"
 							/>
 						</a>
