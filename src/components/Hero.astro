@@ -3,6 +3,11 @@ import { Image } from "astro:assets";
 import hero1 from "../assets/hero.png";
 import bg1 from "../assets/hero-bg-1.png";
 import bg2 from "../assets/hero-bg-2.png";
+import badgeAppStore from "../assets/badge-appstore.svg?url";
+import badgePlayStore from "../assets/badge-playstore.svg?url";
+
+const APP_STORE_URL = "https://apps.apple.com/us/app/life-visor/id6759874795";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsign.lifevisorapp&pli=1";
 ---
 
 <div>
@@ -54,18 +59,38 @@ import bg2 from "../assets/hero-bg-2.png";
 							every moment with Life Visor by Devsign — your guide
 							to a more mindful day.
 						</p>
+						<!-- Desktop badges -->
 						<div
-							class="flex gap-2 items-center justify-between mt-15"
+							class="hidden md:flex gap-4 items-end mt-15 flex-wrap"
 						>
-							<button
-								class="bg-[#24333F] text-white md:inline-block hidden text-lg text-center opacity-80 px-8 py-3 rounded-full tracking-[.3em]"
-								>COMING SOON</button
+							<a
+								id="badge-appstore-desktop"
+								href={APP_STORE_URL}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="transition-opacity hover:opacity-80"
 							>
-							<p
-								class="opacity-80 text-[#E4EAF0] text-base hidden lg:block max-w-55"
+								<img
+									src={badgeAppStore}
+									height="46"
+									style="height:58px;width:auto;display:block;"
+									alt="Download on the App Store"
+								/>
+							</a>
+							<a
+								id="badge-playstore-desktop"
+								href={PLAY_STORE_URL}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="transition-opacity hover:opacity-80"
 							>
-								Leave uncertainty behind and live your life.
-							</p>
+								<img
+									src={badgePlayStore}
+									height="46"
+									style="height:58px;width:auto;display:block;"
+									alt="Get it on Google Play"
+								/>
+							</a>
 						</div>
 					</div>
 
@@ -78,10 +103,39 @@ import bg2 from "../assets/hero-bg-2.png";
 						alt="Smartphone running the Life Visor app, showing the main screen."
 					/>
 
-					<button
-						class="bg-[#24333F] text-white mx-auto md:hidden text-lg text-center opacity-80 px-8 py-3 rounded-full mt-15 tracking-[.3em]"
-						>COMING SOON</button
+					<!-- Mobile badges -->
+					<div
+						class="flex gap-3 items-end justify-center mx-auto md:hidden mt-15 flex-wrap"
 					>
+						<a
+							id="badge-appstore-mobile"
+							href={APP_STORE_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="transition-opacity hover:opacity-80"
+						>
+							<img
+								src={badgeAppStore}
+								height="40"
+								style="height:50px;width:auto;display:block;"
+								alt="Download on the App Store"
+							/>
+						</a>
+						<a
+							id="badge-playstore-mobile"
+							href={PLAY_STORE_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="transition-opacity hover:opacity-80"
+						>
+							<img
+								src={badgePlayStore}
+								height="40"
+								style="height:50px;width:auto;display:block;"
+								alt="Get it on Google Play"
+							/>
+						</a>
+					</div>
 				</div>
 
 				<div class="md:hidden">
@@ -103,3 +157,30 @@ import bg2 from "../assets/hero-bg-2.png";
 		backdrop-filter: blur(10px);
 	}
 </style>
+
+<script>
+	(function () {
+		const ua = navigator.userAgent;
+		const isIOS = /iPhone|iPad|iPod/i.test(ua);
+		const isAndroid = /Android/i.test(ua);
+
+		if (isIOS) {
+			// Hide Play Store badges
+			document
+				.getElementById("badge-playstore-desktop")
+				?.style.setProperty("display", "none");
+			document
+				.getElementById("badge-playstore-mobile")
+				?.style.setProperty("display", "none");
+		} else if (isAndroid) {
+			// Hide App Store badges
+			document
+				.getElementById("badge-appstore-desktop")
+				?.style.setProperty("display", "none");
+			document
+				.getElementById("badge-appstore-mobile")
+				?.style.setProperty("display", "none");
+		}
+		// Desktop: show both (default)
+	})();
+</script>
