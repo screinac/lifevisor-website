@@ -1,0 +1,36 @@
+---
+const audiences = [
+  "Students",
+  "Professionals",
+  "Freelancers",
+  "Parents",
+  "Creatives",
+  "Anyone with intention",
+];
+---
+
+<section class="w-full px-5 sm:px-8 py-20 sm:py-28 bg-bg-soft">
+  <div class="max-w-5xl mx-auto fade-in">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="block w-5 h-[2px] bg-muted-2"></span>
+      <span class="eyebrow text-ink-soft">WHO IT'S FOR</span>
+    </div>
+
+    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-8 max-w-3xl">
+      For anyone who feels their time <span class="highlight-purple">deserves attention</span>
+    </h2>
+
+    <p class="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-10">
+      Whether you want to understand your habits, build healthier routines, be more productive, or
+      simply live with more intention — Life Visor stays out of the way and lets you see the truth.
+    </p>
+
+    <div class="flex flex-wrap gap-3">
+      {audiences.map((a) => (
+        <span class="px-4 py-2 rounded-full bg-bg-card border border-line-soft text-sm text-ink-soft">
+          {a}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,184 +1,101 @@
 ---
 import { Image } from "astro:assets";
-import hero1 from "../assets/hero.png";
-import bg1 from "../assets/hero-bg-1.png";
-import bg2 from "../assets/hero-bg-2.png";
-import badgeAppStore from "../assets/badge-appstore.svg?url";
-import badgePlayStore from "../assets/badge-playstore.svg?url";
+import appstoreBadge from "../assets/badge-appstore.svg";
+import playstoreBadge from "../assets/badge-playstore.svg";
+import homeScreenshot from "../assets/screenshots/home.png";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/life-visor/id6759874795";
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsign.lifevisorapp&pli=1";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.devsign.lifevisorapp";
 ---
 
-<div>
-	<main>
-		<section>
-			<Image
-				src={bg1}
-				class={"absolute top-35"}
-				layout="constrained"
-				width={350}
-				alt="Background image color blue"
-			/>
+<section
+  id="download"
+  class="w-full px-5 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24"
+>
+  <div
+    class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+  >
+    <div class="fade-in">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="block w-5 h-[2px] bg-muted-2"></span>
+        <span class="eyebrow text-ink-soft">TIME · INTENTION · CLARITY</span>
+      </div>
 
-			<Image
-				src={bg2}
-				class={"absolute top-75 right-0"}
-				layout="constrained"
-				width={300}
-				alt="Background image color blue"
-			/>
+      <h1
+        class="text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight mb-6"
+      >
+        See where your<br />time
+        <span class="highlight">really goes</span>
+      </h1>
 
-			<div class="md:px-[5vw] md:pb-[5vh]">
-				<div
-					class="glass bg-white/10 pt-18 pb-15 border border-white/50 rounded-b-[50px] md:rounded-[80px] md:pt-22 md:pb-20 px-12 md:justify-between md:px-[6vw] justify-center flex flex-col md:flex-row"
-				>
-					<div class="md:shrink-0 md:w-1/2 lg:w-auto">
-						<h2
-							class="mb-10 lg:text-7xl md:text-5xl md:text-left text-white text-3xl font-bold tracking-wide max-w-lg text-center"
-						>
-							Be
-							<span
-								class="italic md:not-italic md:font-bold font-normal"
-							>
-								mindful</span
-							>
+      <p class="text-base sm:text-lg text-muted leading-relaxed mb-10 max-w-lg">
+        Life Visor helps you track activities, spot the patterns you've been
+        missing, and start living with more clarity. No surveillance vibes —
+        your data stays on your device. No subscriptions.
+      </p>
 
-							of your
-							<br class="md:hidden" />
-							<span
-								class="font-normal tracking-[.65em] md:tracking-[.3em]"
-							>
-								time
-							</span>
-						</h2>
-						<p
-							class="opacity-80 text-[#E4EAF0] text-xl hidden md:block max-w-lg"
-						>
-							Stop living on autopilot and start experiencing
-							every moment with Life Visor by Devsign — your guide
-							to a more mindful day.
-						</p>
-						<!-- Desktop badges -->
-						<div
-							class="hidden md:flex gap-4 items-end mt-15 flex-wrap"
-						>
-							<a
-								id="badge-appstore-desktop"
-								href={APP_STORE_URL}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="transition-opacity hover:opacity-80"
-							>
-								<img
-									src={badgeAppStore}
-									height="46"
-									style="height:58px;width:auto;display:block;"
-									alt="Download on the App Store"
-								/>
-							</a>
-							<a
-								id="badge-playstore-desktop"
-								href={PLAY_STORE_URL}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="transition-opacity hover:opacity-80"
-							>
-								<img
-									src={badgePlayStore}
-									height="46"
-									style="height:58px;width:auto;display:block;"
-									alt="Get it on Google Play"
-								/>
-							</a>
-						</div>
-					</div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener"
+          class="transition-transform hover:scale-[1.03]"
+        >
+          <Image
+            src={appstoreBadge}
+            alt="Download on the App Store"
+            height={52}
+            class="h-[52px] w-auto"
+          />
+        </a>
+        <a
+          href={PLAY_STORE_URL}
+          target="_blank"
+          rel="noopener"
+          class="transition-transform hover:scale-[1.03]"
+        >
+          <Image
+            src={playstoreBadge}
+            alt="Get it on Google Play"
+            height={52}
+            class="h-[52px] w-auto"
+          />
+        </a>
+      </div>
 
-					<Image
-						src={hero1}
-						class="fade-in-section lg:pr-16 md:pr-4 self-start md:w-90 lg:w-120"
-						layout="constrained"
-						width={1242}
-						height={1326}
-						alt="Smartphone running the Life Visor app, showing the main screen."
-					/>
+      <div
+        class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-xs text-muted-2"
+      >
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          One-time payment for Pro
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          Local-only data
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          iOS & Android
+        </span>
+      </div>
+    </div>
 
-					<!-- Mobile badges -->
-					<div
-						class="flex gap-3 items-end justify-center mx-auto md:hidden mt-15 flex-wrap w-full px-10"
-					>
-						<a
-							id="badge-appstore-mobile"
-							href={APP_STORE_URL}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="transition-opacity hover:opacity-80 w-full"
-						>
-							<img
-								src={badgeAppStore}
-								style="width:100%;height:auto;display:block;"
-								alt="Download on the App Store"
-							/>
-						</a>
-						<a
-							id="badge-playstore-mobile"
-							href={PLAY_STORE_URL}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="transition-opacity hover:opacity-80 w-full"
-						>
-							<img
-								src={badgePlayStore}
-								style="width:100%;height:auto;display:block;"
-								alt="Get it on Google Play"
-							/>
-						</a>
-					</div>
-				</div>
-
-				<div class="md:hidden">
-					<p
-						class="opacity-80 text-[#E4EAF0] text-center px-12 text-xl py-10"
-					>
-						Stop living on autopilot and start experiencing every
-						moment with Life Visor — your guide to a more mindful
-						day.
-					</p>
-				</div>
-			</div>
-		</section>
-	</main>
-</div>
-
-<style>
-	.glass {
-		backdrop-filter: blur(10px);
-	}
-</style>
-
-<script>
-	(function () {
-		const ua = navigator.userAgent;
-		const isIOS = /iPhone|iPad|iPod/i.test(ua);
-		const isAndroid = /Android/i.test(ua);
-
-		if (isIOS) {
-			// Hide Play Store badges
-			document
-				.getElementById("badge-playstore-desktop")
-				?.style.setProperty("display", "none");
-			document
-				.getElementById("badge-playstore-mobile")
-				?.style.setProperty("display", "none");
-		} else if (isAndroid) {
-			// Hide App Store badges
-			document
-				.getElementById("badge-appstore-desktop")
-				?.style.setProperty("display", "none");
-			document
-				.getElementById("badge-appstore-mobile")
-				?.style.setProperty("display", "none");
-		}
-		// Desktop: show both (default)
-	})();
-</script>
+    <div class="fade-in flex justify-center lg:justify-end lg:pr-8 xl:pr-12">
+      <div class="relative">
+        <div class="absolute -inset-8 bg-accent-bg/40 rounded-[60px] blur-3xl">
+        </div>
+        <div
+          class="relative w-[260px] sm:w-[300px] aspect-[9/19.5] rounded-[44px] border border-line bg-bg-card shadow-2xl overflow-hidden"
+        >
+          <Image
+            src={homeScreenshot}
+            alt="Life Visor home screen"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

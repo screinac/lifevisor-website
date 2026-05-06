@@ -1,0 +1,55 @@
+---
+const steps = [
+  {
+    number: "1",
+    color: "bg-accent-bg",
+    text: "text-accent",
+    title: "Create an activity",
+    description: "Whatever you want to follow: reading, exercise, therapy, work, rest. You choose.",
+  },
+  {
+    number: "2",
+    color: "bg-cool",
+    text: "text-cool-ink",
+    title: "Start tracking it",
+    description: "One tap and the timer runs. When you're done, one tap and it stops.",
+  },
+  {
+    number: "3",
+    color: "bg-warm",
+    text: "text-warm-ink",
+    title: "Reflect",
+    description: "Look at your patterns. Decide what to adjust.",
+  },
+];
+---
+
+<section class="w-full px-5 sm:px-8 py-20 sm:py-28 bg-bg-soft">
+  <div class="max-w-5xl mx-auto fade-in">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="block w-5 h-[2px] bg-muted-2"></span>
+      <span class="eyebrow text-ink-soft">HOW IT WORKS</span>
+    </div>
+
+    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-12 sm:mb-16">
+      In three <span class="highlight-blue">steps</span>
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      {steps.map((step) => (
+        <div class="bg-bg-card border border-line-soft rounded-3xl p-7 hover:shadow-md transition-shadow">
+          <div class={`w-12 h-12 rounded-xl ${step.color} flex items-center justify-center mb-5`}>
+            <span class={`text-lg font-bold ${step.text}`}>{step.number}</span>
+          </div>
+          <h3 class="text-lg font-semibold text-ink mb-2">{step.title}</h3>
+          <p class="text-sm text-muted leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-14 max-w-2xl text-base text-muted leading-relaxed">
+      Time is our <span class="font-bold text-ink">most valuable</span> resource. Knowing exactly
+      how we use it can help you orient your life toward what really matters to you.
+    </p>
+  </div>
+</section>

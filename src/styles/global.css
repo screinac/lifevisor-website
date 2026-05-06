@@ -1,15 +1,94 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg: #FBF9F5;
+  --color-bg-card: #FEFCF8;
+  --color-bg-soft: #F3F1EB;
+  --color-ink: #14161A;
+  --color-ink-soft: #3D4046;
+  --color-muted: #616161;
+  --color-muted-2: #868687;
+  --color-line: #E5E1D8;
+  --color-line-soft: #F1EFE9;
+  --color-accent: #447858;
+  --color-accent-bg: #D5EDDC;
+  --color-warm: #F8ECBB;
+  --color-warm-ink: #806927;
+  --color-cool: #DED7F2;
+  --color-cool-ink: #584C86;
+  --color-info: #D3E3F3;
+  --color-info-ink: #255687;
 
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
+  --font-sans: "Istok Web", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
+html, body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.highlight,
+.highlight-green,
+.highlight-purple,
+.highlight-blue,
+.highlight-orange,
+.highlight-yellow {
+  padding: 0 4px;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.highlight,
+.highlight-green {
+  color: var(--color-accent);
+  background-color: var(--color-accent-bg);
+}
+
+.highlight-purple {
+  color: #584C86;
+  background-color: #DED7F2;
+}
+
+.highlight-blue {
+  color: #3B5D84;
+  background-color: #D3E3F3;
+}
+
+.highlight-orange {
+  color: #835630;
+  background-color: #F6DEC4;
+}
+
+.highlight-yellow {
+  color: #806927;
+  background-color: #F8ECBB;
 }

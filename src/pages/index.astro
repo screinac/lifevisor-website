@@ -1,29 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import InitialOverlay from "../components/InitialOverlay.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
+import Question from "../components/Question.astro";
+import HowItWorks from "../components/HowItWorks.astro";
 import Features from "../components/Features.astro";
-import Benefits from "../components/Benefits.astro";
-import BenefitsDesk from "../components/BenefitsDesk.astro";
-import Reviews from "../components/Reviews.astro";
-import ReviewsDesk from "../components/ReviewsDesk.astro";
-import Download from "../components/Download.astro";
+import Pro from "../components/Pro.astro";
+import ForWho from "../components/ForWho.astro";
+import Privacy from "../components/Privacy.astro";
+import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<InitialOverlay />
-	<Navbar client:load />
-	<Hero />
-	<Features />
-	<Benefits client:load />
-	<BenefitsDesk />
-	<Reviews client:load />
-	<ReviewsDesk />
-	<Download />
-	<Footer />
+  <Navbar />
+  <main>
+    <Hero />
+    <Question />
+    <HowItWorks />
+    <Features />
+    <Pro />
+    <ForWho />
+    <Privacy />
+    <CTA />
+  </main>
+  <Footer />
 </Layout>

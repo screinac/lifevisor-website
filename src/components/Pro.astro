@@ -1,0 +1,58 @@
+---
+const proFeatures = [
+  "Unlimited activities (no 3-activity limit)",
+  "Advanced weekly and monthly charts",
+  "Time analysis by category",
+  "Edit session duration if you went over or ran short",
+  "No subscriptions, no renewals — yours forever",
+];
+---
+
+<section id="pro" class="w-full px-5 sm:px-8 py-20 sm:py-28">
+  <div class="max-w-4xl mx-auto fade-in">
+    <div class="bg-ink rounded-[36px] p-8 sm:p-14 text-white relative overflow-hidden">
+      <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-accent/20 blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-cool/10 blur-3xl"></div>
+
+      <div class="relative">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 mb-8">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/><path d="M9 14L7.5 22 12 19.5 16.5 22 15 14"/>
+          </svg>
+          <span class="text-xs font-bold tracking-wider">PRO</span>
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight mb-6">
+          Unlock the full<br />
+          experience.
+          <span style="color:#F8ECBB">One payment.</span>
+        </h2>
+
+        <p class="text-base sm:text-lg text-white/70 leading-relaxed mb-10 max-w-xl">
+          Life Visor Pro gives you the complete tool — without subscriptions, without renewals.
+          Pay once, keep it forever.
+        </p>
+
+        <ul class="space-y-3 mb-10">
+          {proFeatures.map((feat) => (
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-accent flex items-center justify-center mt-0.5 shrink-0">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base text-white/90">{feat}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href="#download" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-ink text-sm font-semibold hover:bg-white/90 transition-colors">
+          Get Life Visor
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

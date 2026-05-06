@@ -1,59 +1,47 @@
 ---
 import "../styles/global.css";
-import "@fontsource/istok-web";
+import "@fontsource/istok-web/400.css";
+import "@fontsource/istok-web/700.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Life Visor — See where your time really goes",
+  description = "Life Visor helps you understand how you spend your time. Track activities, spot patterns, and live with more clarity. Privacy-first, no subscriptions, your data stays on your device.",
+} = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, viewport-fit=cover"
-		/>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Life Visor</title>
-		<meta
-			name="description"
-			content="Life Visor is a productivity app that helps you track your time, improve focus, and build better daily habits with a simple activity timer."
-		/>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lifevisorapp.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-bg text-ink">
+    <slot />
 
-	<body>
-		<div class="bg-[#5b7e9e] max-w-500 mx-auto">
-			<slot />
-		</div>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-		<script>
-			const elementos =
-				document.getElementsByClassName("fade-in-section");
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("is-visible");
-						observer.unobserve(entry.target); // deja de observar
-					}
-				});
-			});
-
-			// Observar todos los elementos
-			Array.from(elementos).forEach((el) => {
-				observer.observe(el);
-			});
-		</script>
-	</body>
-
-	<style>
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #121920;
-			font-family: "Istok Web", sans-serif;
-			color: "#121920";
-		}
-	</style>
+      document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+    </script>
+  </body>
 </html>

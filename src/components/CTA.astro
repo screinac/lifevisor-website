@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import appstoreBadge from "../assets/badge-appstore.svg";
+import playstoreBadge from "../assets/badge-playstore.svg";
+import appIcon from "../assets/app-icon.png";
+
+const APP_STORE_URL = "https://apps.apple.com/us/app/life-visor/id6759874795";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsign.lifevisorapp";
+---
+
+<section class="w-full px-5 sm:px-8 py-20 sm:py-28 bg-bg-soft">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+    <Image src={appIcon} alt="Life Visor" width={72} height={72} class="rounded-2xl shadow-lg mx-auto mb-8" />
+
+    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-6">
+      Start <span class="highlight-orange">today</span>.
+    </h2>
+
+    <p class="text-base sm:text-lg text-muted leading-relaxed mb-10 max-w-xl mx-auto">
+      Free to use, with optional Pro for unlimited activities and advanced charts.
+      No subscriptions. Yours forever.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href={APP_STORE_URL} target="_blank" rel="noopener" class="transition-transform hover:scale-[1.03]">
+        <Image src={appstoreBadge} alt="Download on the App Store" height={52} class="h-[52px] w-auto" />
+      </a>
+      <a href={PLAY_STORE_URL} target="_blank" rel="noopener" class="transition-transform hover:scale-[1.03]">
+        <Image src={playstoreBadge} alt="Get it on Google Play" height={52} class="h-[52px] w-auto" />
+      </a>
+    </div>
+  </div>
+</section>
