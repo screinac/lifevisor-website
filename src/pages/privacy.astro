@@ -5,10 +5,10 @@ import Footer from "../components/Footer.astro";
 
 const CONTACT_EMAIL = "support@lifevisorapp.com";
 const CONTROLLER_NAME = "Life Visor";
-const EFFECTIVE_DATE = "2026-05-05";
+const EFFECTIVE_DATE = "2026-08-11";
 ---
 
-<Layout title="Privacy Policy — Life Visor" description="How Life Visor handles your data: stays on your device, no tracking, no servers.">
+<Layout title="Privacy Policy — Life Visor" description="How Life Visor and Luna handle your data: what stays on your device, what's sent for analysis, and your rights.">
   <Navbar />
 
   <article class="w-full px-5 sm:px-8 py-16 sm:py-24">
@@ -33,8 +33,9 @@ const EFFECTIVE_DATE = "2026-05-05";
           and the rights you have. By using the Service, you agree to the practices described here.
         </p>
         <p>
-          Life Visor is a privacy-first time-tracking app. Your activity data lives only on your
-          device. We do not run servers that store, sync, or analyze it.
+          Life Visor is a privacy-respecting time-tracking and wellness app. Your activity data
+          lives on your device by default. When you use Luna, the data needed to generate your
+          analysis is sent securely, for that purpose only, as described in section 2 below.
         </p>
 
         <h2 class="text-xl font-bold text-ink pt-8">1. Data Controller</h2>
@@ -46,16 +47,35 @@ const EFFECTIVE_DATE = "2026-05-05";
 
         <h2 class="text-xl font-bold text-ink pt-8">2. Information We Process</h2>
 
-        <h3 class="text-base font-bold text-ink pt-4">2.1 Information that stays on your device</h3>
+        <h3 class="text-base font-bold text-ink pt-4">2.1 Information stored on your device</h3>
         <p>
           When you use the App you create activities and sessions (names, colors, categories,
-          start/end times). This information is stored exclusively in a local database on your
-          device.
-          <span class="font-semibold text-ink">It never leaves your device, is never transmitted to us, and is not accessible to anyone but you.</span>
-          Uninstalling the App permanently removes this data.
+          start/end times). This information is stored in a local database on your device by
+          default and is not accessible to anyone but you. Uninstalling the App permanently
+          removes this data. If you use Luna, some of this information is also sent for analysis
+          as described in section 2.2 below.
         </p>
 
-        <h3 class="text-base font-bold text-ink pt-4">2.2 Information processed by third-party processors</h3>
+        <h3 class="text-base font-bold text-ink pt-4">2.2 Information processed by Luna</h3>
+        <p>
+          Luna is an in-app assistant that analyzes your activities and sessions to generate
+          insights and suggestions. When you ask Luna for an analysis, the relevant activity and
+          session data for the period you request is
+          <span class="font-semibold text-ink">transmitted securely (encrypted in transit via TLS)</span>
+          to <span class="font-semibold text-ink">Google LLC</span>, via the paid tier of the Gemini
+          API, solely to generate that analysis. We do not sell this data or share it with
+          advertisers, and under Google's paid-tier terms,
+          <span class="font-semibold text-ink">Google does not use your prompts or Luna's responses to train or improve its own products</span>.
+        </p>
+        <p>
+          Data sent to Luna is retained only for as long as needed to provide the feature and to
+          detect and prevent abuse or violations of Google's usage policies, and you can request its
+          deletion at any time (see section 11). For details, see the
+          <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">Gemini API Additional Terms of Service</a>
+          and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">Google's Privacy Policy</a>.
+        </p>
+
+        <h3 class="text-base font-bold text-ink pt-4">2.3 Information processed by third-party processors</h3>
         <p>
           To enable Pro purchases and restore them across your devices, the App uses
           <span class="font-semibold text-ink">RevenueCat, Inc.</span> (a service provider acting
@@ -72,7 +92,7 @@ const EFFECTIVE_DATE = "2026-05-05";
           <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">revenuecat.com/privacy</a>.
         </p>
 
-        <h3 class="text-base font-bold text-ink pt-4">2.3 Payments</h3>
+        <h3 class="text-base font-bold text-ink pt-4">2.4 Payments</h3>
         <p>
           All payments are processed by <span class="font-semibold text-ink">Apple</span> (App
           Store) or <span class="font-semibold text-ink">Google</span> (Google Play). We never see
@@ -80,7 +100,7 @@ const EFFECTIVE_DATE = "2026-05-05";
           policies apply to those transactions.
         </p>
 
-        <h3 class="text-base font-bold text-ink pt-4">2.4 Notifications and Live Activities</h3>
+        <h3 class="text-base font-bold text-ink pt-4">2.5 Notifications and Live Activities</h3>
         <p>
           On Android, the App can send you local reminders while a session is running. These
           notifications are scheduled and delivered locally by your device's operating system; no
@@ -93,7 +113,7 @@ const EFFECTIVE_DATE = "2026-05-05";
           your device.
         </p>
 
-        <h3 class="text-base font-bold text-ink pt-4">2.5 Website</h3>
+        <h3 class="text-base font-bold text-ink pt-4">2.6 Website</h3>
         <p>
           The website lifevisorapp.com is a static informational site hosted by a third-party
           provider. We do not use cookies, web analytics, or behavioral tracking on the website.
@@ -104,22 +124,30 @@ const EFFECTIVE_DATE = "2026-05-05";
         <h2 class="text-xl font-bold text-ink pt-8">3. Purposes and Legal Bases (GDPR)</h2>
         <p>
           For users located in the European Economic Area, the United Kingdom, or Switzerland, the
-          following legal bases under Article 6 GDPR apply to the limited data processed via
-          RevenueCat:
+          following legal bases under Article 6 GDPR apply to the data described in section 2:
         </p>
         <ul class="list-disc pl-6 space-y-1">
-          <li><span class="font-semibold text-ink">Performance of a contract</span> (Art. 6(1)(b)) — to validate purchases and provide Pro features.</li>
+          <li><span class="font-semibold text-ink">Performance of a contract</span> (Art. 6(1)(b)) — to validate purchases, provide Pro features, and generate Luna's analysis when you request it.</li>
           <li><span class="font-semibold text-ink">Legitimate interests</span> (Art. 6(1)(f)) — to detect fraudulent purchases and maintain the integrity of the purchase system.</li>
           <li><span class="font-semibold text-ink">Legal obligation</span> (Art. 6(1)(c)) — to comply with tax, accounting and consumer-protection laws applicable to digital sales.</li>
         </ul>
+        <p>
+          If the activities you choose to have Luna analyze relate to your health (for example, an
+          activity you've labeled "therapy" or "exercise"), that information may qualify as a
+          special category of data under Article 9 GDPR. In that case, submitting it to Luna is
+          based on your <span class="font-semibold text-ink">explicit consent</span> (Art. 9(2)(a)),
+          which you give by choosing to request that analysis. You can withdraw this consent at any
+          time by simply not using Luna for that data, or by requesting deletion under section 11.
+        </p>
 
         <h2 class="text-xl font-bold text-ink pt-8">4. Categories of Recipients</h2>
         <p>
-          We share the limited information described in section 2.2 with:
+          We share the limited information described in section 2 with:
         </p>
         <ul class="list-disc pl-6 space-y-1">
+          <li>Google LLC (Gemini API) — to generate Luna's analysis, as described in section 2.2.</li>
           <li>RevenueCat, Inc. — purchase processing and entitlement management.</li>
-          <li>Apple Inc. and Google LLC — payment processing and platform distribution.</li>
+          <li>Apple Inc. and Google LLC — payment processing, subscription management, and platform distribution.</li>
         </ul>
         <p>
           We do not sell, rent, or share personal information with advertising networks, data
@@ -141,6 +169,11 @@ const EFFECTIVE_DATE = "2026-05-05";
           installed. Uninstalling the App deletes it.
         </p>
         <p>
+          Data sent to Luna for analysis is retained only for as long as needed to provide the
+          feature, and is deleted when no longer needed for that purpose or upon your deletion
+          request.
+        </p>
+        <p>
           Anonymous purchase records held by RevenueCat are retained for as long as required to
           maintain your entitlements and to comply with applicable tax and consumer-protection
           laws (typically up to 7 years).
@@ -150,9 +183,10 @@ const EFFECTIVE_DATE = "2026-05-05";
 
         <h3 class="text-base font-bold text-ink pt-4">7.1 All users</h3>
         <p>
-          You can delete all activity data we never see by simply uninstalling the App. To request
-          deletion or export of any anonymous purchase data linked to your installation, contact
-          us at <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>
+          You can delete your local activity data at any time by simply uninstalling the App. To
+          request deletion or export of data sent to Luna, or of anonymous purchase data linked to
+          your installation, contact us at
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>
           and include your store account email so the request can be matched.
         </p>
 
@@ -177,12 +211,16 @@ const EFFECTIVE_DATE = "2026-05-05";
         </p>
         <p>
           <span class="font-semibold text-ink">We do not sell or share your personal information</span>
-          (as those terms are defined under the CCPA/CPRA), and we do not process sensitive
-          personal information for purposes other than those expressly permitted by the regulation.
-          Categories of personal information collected in the past 12 months are limited to:
-          identifiers (anonymous user ID), commercial information (purchase records), and internet
-          or other electronic network activity (basic device information transmitted with
-          purchase events). To exercise your rights, contact
+          (as those terms are defined under the CCPA/CPRA). Categories of personal information
+          collected in the past 12 months are limited to: identifiers (anonymous user ID),
+          commercial information (purchase records), internet or other electronic network activity
+          (basic device information transmitted with purchase events), and, if you use Luna, the
+          activity and session data you submit for analysis. If the activities you choose to have
+          Luna analyze relate to your health or wellness (for example, an activity you've labeled
+          "therapy" or "exercise"), that information may qualify as sensitive personal information
+          under the CPRA. We only process it to generate the analysis you requested, we do not use
+          it for any other purpose, and we do not use it to infer characteristics about you beyond
+          that. To exercise your rights, contact
           <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>.
         </p>
 
@@ -210,33 +248,33 @@ const EFFECTIVE_DATE = "2026-05-05";
 
         <h2 class="text-xl font-bold text-ink pt-8">9. Children's Privacy</h2>
         <p>
-          Life Visor is rated for general audiences (4+ in most regions, with equivalent ratings
-          in other markets) and may be used by children with the permission of a parent or
-          guardian. Because all activity data stays on the device and the App does not request any
-          personal information (name, email, age, location, contacts, etc.), children's privacy is
-          protected by design.
+          The Service, including Luna, is not directed at children and requires users to be at
+          least 13 years old, consistent with our
+          <a href="/terms" class="text-accent underline underline-offset-4">Terms of Service</a>.
+          Users between 13 and the age of majority in their jurisdiction may only use the Service
+          with the involvement and consent of a parent or legal guardian.
         </p>
         <p>
           We do not knowingly collect personal information from children under 13 (or the
-          equivalent minimum age in your jurisdiction). If you are a parent or guardian and
-          believe your child has provided personal information to us, please contact
-          <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>
-          and we will take appropriate action.
+          equivalent minimum age in your jurisdiction). If you are a parent or guardian and believe
+          your child under 13 has used the Service or provided personal information to us, please
+          contact <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>
+          and we will delete the relevant data and take appropriate action.
         </p>
 
         <h2 class="text-xl font-bold text-ink pt-8">10. Security</h2>
         <p>
-          Because activity data is stored only on your device, its security is primarily protected
-          by your device's operating system (sandboxing, full-disk encryption, screen lock).
-          Communications with RevenueCat, Apple and Google are encrypted in transit using TLS. No
-          method of transmission or storage is 100% secure, but we work with reputable processors
-          that follow industry-standard practices.
+          Because most activity data is stored locally on your device by default, its security is
+          primarily protected by your device's operating system (sandboxing, full-disk encryption,
+          screen lock). Data sent to Luna, RevenueCat, Apple, and Google is encrypted in transit
+          using TLS. No method of transmission or storage is 100% secure, but we work with
+          reputable processors that follow industry-standard practices.
         </p>
 
         <h2 class="text-xl font-bold text-ink pt-8">11. Data Deletion</h2>
         <p>
-          To delete all activity data, simply uninstall the App. To request deletion of anonymous
-          purchase data held by RevenueCat, email
+          To delete all activity data, simply uninstall the App. To request deletion of data sent
+          to Luna for analysis, or of anonymous purchase data held by RevenueCat, email
           <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>
           from the email associated with your Apple ID or Google account so we can match the
           request. We will action verified deletion requests within 30 days.
