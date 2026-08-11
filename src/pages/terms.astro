@@ -1,0 +1,242 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const CONTACT_EMAIL = "support@lifevisorapp.com";
+const LEGAL_ENTITY = "Devsign";
+const APP_NAME = "Life Visor";
+const EFFECTIVE_DATE = "2026-08-11";
+---
+
+<Layout
+  title="Terms of Service — Life Visor"
+  description="The terms and conditions that govern your use of Life Visor, including subscriptions, Luna's wellness disclaimer, and your rights."
+>
+  <Navbar />
+
+  <article class="w-full px-5 sm:px-8 py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="block w-5 h-[2px] bg-muted-2"></span>
+        <span class="eyebrow text-ink-soft">TERMS OF SERVICE</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-4">
+        The <span class="highlight-yellow">rules</span> of using Life Visor
+      </h1>
+      <p class="text-sm text-muted-2 mb-12">Effective date: {EFFECTIVE_DATE}</p>
+
+      <div class="prose-content space-y-6 text-base text-muted leading-relaxed">
+
+        <p>
+          These Terms of Service (“Terms”) are a contract between you and {LEGAL_ENTITY} (“we,”
+          “our,” or “us”), the company that owns and operates the {APP_NAME} mobile application,
+          available on the Apple App Store and Google Play, its Luna wellness assistant, and the
+          website
+          <a href="https://www.lifevisorapp.com" class="text-accent underline underline-offset-4">lifevisorapp.com</a>
+          (together, the “Service”). By downloading, installing, accessing, or using the Service,
+          you agree to be bound by these Terms. If you do not agree, do not use the Service.
+        </p>
+        <p>
+          Our <a href="/privacy" class="text-accent underline underline-offset-4">Privacy Policy</a>
+          explains how we handle your information and is incorporated into these Terms by
+          reference.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">1. The Service and Acceptance</h2>
+        <p>
+          {APP_NAME} is a wellness and self-understanding app. It includes Luna, an in-app
+          assistant that reviews the information you provide and generates analysis, summaries,
+          and suggestions to help you reflect on your habits and wellbeing.
+        </p>
+        <p>
+          You must be at least 13 years old to use the Service. If you are under the age of
+          majority in your jurisdiction, you may only use the Service with the involvement and
+          consent of a parent or legal guardian. By using the Service, you represent that you meet
+          these requirements and that any information you provide is accurate.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">2. Subscriptions and Purchases</h2>
+
+        <h3 class="text-base font-bold text-ink pt-4">2.1 Plans</h3>
+        <p>
+          Some features of the Service require a paid subscription (“Pro” or similar plans). The
+          plans available, their duration, and their price are shown in the app and in the Apple
+          App Store or Google Play listing at the time of purchase. Prices may vary by region and
+          are subject to change; if we change the price of a plan you are subscribed to, we will
+          notify you in advance as required by Apple or Google, and the new price will apply from
+          your next renewal unless you cancel beforehand.
+        </p>
+
+        <h3 class="text-base font-bold text-ink pt-4">2.2 Free trial and automatic renewal</h3>
+        <p>
+          Where offered, a subscription may start with a <span class="font-semibold text-ink">7-day free trial</span>.
+          If you do not cancel before the trial ends, your subscription
+          <span class="font-semibold text-ink">automatically converts into a paid subscription</span>
+          and payment will be charged to your Apple ID or Google Play account at confirmation of
+          purchase.
+        </p>
+        <p>
+          After that, your subscription <span class="font-semibold text-ink">automatically renews</span>
+          for the same duration and at the then-current price, at the end of every billing period,
+          unless you turn off auto-renewal at least 24 hours before the end of the current period.
+          Your account will be charged for renewal within 24 hours prior to the end of the current
+          period. Any unused portion of a free trial is forfeited once you purchase a subscription,
+          where applicable.
+        </p>
+
+        <h3 class="text-base font-bold text-ink pt-4">2.3 How to cancel</h3>
+        <p>
+          Subscriptions are managed through the store you subscribed with, not through us directly.
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><span class="font-semibold text-ink">iOS:</span> Settings → your name → Subscriptions → {APP_NAME}.</li>
+          <li><span class="font-semibold text-ink">Android:</span> Google Play app → Menu → Payments &amp; subscriptions → Subscriptions → {APP_NAME}.</li>
+        </ul>
+        <p>
+          You can cancel at any time; access continues until the end of the period already paid
+          for, and you will not be charged again after cancellation takes effect.
+        </p>
+
+        <h3 class="text-base font-bold text-ink pt-4">2.4 Payments and refunds</h3>
+        <p>
+          All payments are processed exclusively by <span class="font-semibold text-ink">Apple</span>
+          (App Store) or <span class="font-semibold text-ink">Google</span> (Google Play). We do
+          not process payments or store your payment details ourselves. Billing, invoicing, and
+          refund requests are handled entirely by Apple or Google according to their own terms and
+          policies:
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><a href="https://support.apple.com/en-us/HT204084" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">Apple's refund policy</a></li>
+          <li><a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">Google Play's refund policy</a></li>
+        </ul>
+        <p>
+          We do not have the ability to issue refunds directly and cannot override the store's
+          decision on a refund request.
+        </p>
+
+        <h3 class="text-base font-bold text-ink pt-4">2.5 Lifetime purchases</h3>
+        <p>
+          If you previously bought a one-time “lifetime” license to {APP_NAME}, that purchase
+          remains valid for as long as the Service exists — it is not affected by the introduction
+          of subscription plans, you will not be charged again for the features included in your
+          original purchase, and these Terms apply to your continued use of the Service.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">3. Luna and Wellness Disclaimer</h2>
+        <p>
+          Luna's analysis, insights, and suggestions are generated from the information you
+          provide and are offered for
+          <span class="font-semibold text-ink">informational and self-reflection purposes only</span>.
+          They do not constitute, and must not be relied upon as, medical, psychological,
+          psychiatric, therapeutic, financial, or other professional advice, diagnosis, or
+          treatment.
+        </p>
+        <p>
+          {APP_NAME} and Luna are not a substitute for consultation with a qualified physician,
+          mental health professional, or other licensed provider. If you are experiencing a
+          medical or mental health emergency, or are in crisis, contact your local emergency
+          services or a crisis hotline immediately — do not rely on the Service. Always seek the
+          advice of a qualified professional with any questions you may have regarding a medical
+          or psychological condition, and never disregard or delay professional advice because of
+          something Luna has generated.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">4. Intellectual Property</h2>
+        <p>
+          The Service — including the {APP_NAME} app, its design, the Luna assistant and its
+          underlying technology, the {APP_NAME} name and logo, and all related content, software,
+          and trademarks — is owned by {LEGAL_ENTITY} and is protected by intellectual property
+          laws. We grant you a limited, personal, non-exclusive, non-transferable, revocable
+          license to use the Service for your own personal, non-commercial use, subject to these
+          Terms. You may not copy, modify, distribute, sell, reverse engineer, or create derivative
+          works from the Service, except as permitted by applicable law.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">5. Your Data</h2>
+        <p>
+          You own the data you create and enter in the Service. We process it only as described in
+          our <a href="/privacy" class="text-accent underline underline-offset-4">Privacy Policy</a>,
+          and solely to operate and improve the Service and to generate Luna's analysis for you.
+          Using the Service does not transfer ownership of your data to us.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">6. Acceptable Use</h2>
+        <p>You agree not to:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Use the Service for any unlawful purpose or in violation of these Terms.</li>
+          <li>Attempt to gain unauthorized access to the Service, other accounts, or our systems.</li>
+          <li>Interfere with, disrupt, or overload the Service's infrastructure.</li>
+          <li>Reverse engineer, decompile, or extract the source code or models behind the Service, except as permitted by law.</li>
+          <li>Use the Service to harass, abuse, or harm another person, or to input content that is illegal, defamatory, or infringes on others' rights.</li>
+          <li>Circumvent, disable, or bypass subscription or payment mechanisms.</li>
+        </ul>
+        <p>
+          We may suspend or restrict access to features if we reasonably believe your use violates
+          this section.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">7. No Warranties</h2>
+        <p>
+          The Service, including Luna's output, is provided
+          <span class="font-semibold text-ink">“as is” and “as available,”</span> without
+          warranties of any kind, whether express, implied, or statutory, including implied
+          warranties of merchantability, fitness for a particular purpose, non-infringement, or
+          that the Service will be uninterrupted, error-free, accurate, or complete. We do not
+          warrant that Luna's analysis will be accurate, complete, or suitable for your particular
+          situation.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">8. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by applicable law, {LEGAL_ENTITY} and its officers,
+          employees, and affiliates will not be liable for any indirect, incidental, special,
+          consequential, or punitive damages, or any loss of data, use, goodwill, or profits,
+          arising out of or related to your use of, or inability to use, the Service — including
+          any decision made or action taken in reliance on Luna's analysis or suggestions. Our
+          total aggregate liability for any claim arising out of these Terms or the Service will
+          not exceed the amount you paid us, if any, in the 12 months preceding the claim. Nothing
+          in these Terms limits liability that cannot be limited under applicable Colombian law.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">9. Termination</h2>
+        <p>
+          You may stop using the Service and delete your account at any time. We may suspend or
+          terminate your access to the Service, in whole or in part, if you breach these Terms, if
+          required by law, or if we discontinue the Service, with notice where reasonably
+          practicable. Sections that by their nature should survive termination (including
+          Intellectual Property, No Warranties, Limitation of Liability, and Governing Law) will
+          survive.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">10. Governing Law</h2>
+        <p>
+          These Terms are governed by the laws of the Republic of Colombia, without regard to its
+          conflict-of-law principles. Any dispute arising out of or relating to these Terms or the
+          Service will be subject to the exclusive jurisdiction of the competent courts of
+          Colombia, except where applicable consumer-protection law in your country of residence
+          grants you the right to bring a claim in your local courts, in which case that right is
+          not affected by this clause.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">11. Changes to These Terms</h2>
+        <p>
+          We may update these Terms from time to time to reflect changes to the Service or for
+          legal reasons. If we make material changes, we will update the effective date above and,
+          where appropriate, provide notice in the app. Continuing to use the Service after changes
+          take effect means you accept the updated Terms.
+        </p>
+
+        <h2 class="text-xl font-bold text-ink pt-8">12. Contact</h2>
+        <p>
+          For questions about these Terms, contact us at
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-accent underline underline-offset-4">{CONTACT_EMAIL}</a>.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
