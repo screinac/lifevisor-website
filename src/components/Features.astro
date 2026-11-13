@@ -1,57 +1,57 @@
 ---
+// Mismo estilo que las tarjetas de "How it works" (HowItWorks.astro), con otros tonos.
 const features = [
   {
-    title: "Custom activities",
-    description: "Track what matters to you. Pick a name, color, and category — done.",
-    icon: `<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>`,
-  },
-  {
-    title: "Sessions in seconds",
-    description: "One tap to start, one tap to stop. Live indicator while it runs.",
-    icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
-  },
-  {
-    title: "Daily summary",
-    description: "See exactly where your day went, with totals and breakdowns.",
-    icon: `<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>`,
-  },
-  {
-    title: "Intuitive charts",
-    description: "Visualize your habits over hours, days, and weeks at a glance.",
+    title: "See your patterns",
+    description: "Clear charts by day, week and month show where your time goes and what's changing.",
+    tags: ["Charts", "Categories", "Daily summary"],
+    bg: "bg-info",
+    ink: "text-info-ink",
+    iconBg: "bg-info-ink/10",
     icon: `<line x1="3" y1="20" x2="21" y2="20"/><rect x="6" y="11" width="3" height="9" rx="0.5"/><rect x="11" y="6" width="3" height="14" rx="0.5"/><rect x="16" y="14" width="3" height="6" rx="0.5"/>`,
   },
   {
-    title: "Pattern discovery",
-    description: "Spot the small habits that quietly shape your weeks.",
-    icon: `<path d="M3 12h4l3-9 4 18 3-9h4"/>`,
+    title: "Stay on track",
+    description: "Keep your streak alive with gentle reminders, and follow your running session from the Lock Screen.",
+    tags: ["Streaks", "Monday summary", "Live Activities"],
+    bg: "bg-warm",
+    ink: "text-warm-ink",
+    iconBg: "bg-warm-ink/10",
+    icon: `<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>`,
   },
   {
-    title: "Privacy-respecting by design",
-    description: "Your data lives on your device by default. No accounts, no ad tracking — only what Luna needs to generate your insights is ever sent for analysis.",
+    title: "Private by design",
+    description: "Your data lives on your device. No accounts, no ads — just open the app and start.",
+    tags: ["On-device", "No sign-up", "No ads"],
+    bg: "bg-accent-bg",
+    ink: "text-accent",
+    iconBg: "bg-accent/10",
     icon: `<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>`,
   },
 ];
 ---
 
-<section id="features" class="w-full px-5 sm:px-8 py-20 sm:py-28">
+<section id="features" class="w-full px-5 sm:px-8 py-14 sm:py-20">
   <div class="max-w-6xl mx-auto fade-in">
-    <div class="flex items-center gap-3 mb-8">
-      <span class="block w-5 h-[2px] bg-muted-2"></span>
-      <span class="eyebrow text-ink-soft">WHAT YOU CAN DO</span>
-    </div>
+    <span class="eyebrow text-muted-2 block mb-4">WHAT YOU CAN DO</span>
 
-    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-12 sm:mb-16 max-w-3xl">
-      Simple tools to understand <span class="highlight-orange">your time</span>
+    <h2 class="display text-5xl sm:text-6xl text-ink mb-12 sm:mb-16 max-w-5xl">
+      Simple tools to understand <b>your time</b>
     </h2>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+    <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
       {features.map((f) => (
-        <div class="bg-bg-card border border-line-soft rounded-3xl p-7">
-          <div class="w-11 h-11 rounded-xl bg-bg-soft flex items-center justify-center mb-5">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D4046" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={f.icon} />
+        <div class={`rounded-[32px] ${f.bg} p-7 sm:p-8 flex flex-col`}>
+          <div class={`w-14 h-14 rounded-full ${f.iconBg} ${f.ink} flex items-center justify-center mb-7`}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={f.icon} />
           </div>
-          <h3 class="text-base font-semibold text-ink mb-2">{f.title}</h3>
-          <p class="text-sm text-muted leading-relaxed">{f.description}</p>
+          <h3 class={`display text-3xl sm:text-4xl ${f.ink} mb-3`}><b>{f.title}</b></h3>
+          <p class="text-base sm:text-lg text-ink-soft leading-relaxed mb-8">{f.description}</p>
+          <div class="mt-auto flex flex-wrap gap-2">
+            {f.tags.map((tag) => (
+              <span class={`px-3.5 py-1.5 rounded-full bg-white/60 text-sm font-medium ${f.ink}`}>{tag}</span>
+            ))}
+          </div>
         </div>
       ))}
     </div>

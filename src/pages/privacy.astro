@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 
 const CONTACT_EMAIL = "support@lifevisorapp.com";
 const CONTROLLER_NAME = "Life Visor";
-const EFFECTIVE_DATE = "2026-08-11";
+const EFFECTIVE_DATE = "2026-11-13";
 ---
 
 <Layout title="Privacy Policy — Life Visor" description="How Life Visor and Luna handle your data: what stays on your device, what's sent for analysis, and your rights.">
@@ -35,7 +35,8 @@ const EFFECTIVE_DATE = "2026-08-11";
         <p>
           Life Visor is a privacy-respecting time-tracking and wellness app. Your activity data
           lives on your device by default. When you use Luna, the data needed to generate your
-          analysis is sent securely, for that purpose only, as described in section 2 below.
+          analysis is sent securely, for that purpose only, and we collect anonymous usage
+          statistics to improve the App, as described in section 2 below.
         </p>
 
         <h2 class="text-xl font-bold text-ink pt-8">1. Data Controller</h2>
@@ -59,8 +60,11 @@ const EFFECTIVE_DATE = "2026-08-11";
         <h3 class="text-base font-bold text-ink pt-4">2.2 Information processed by Luna</h3>
         <p>
           Luna is an in-app assistant that analyzes your activities and sessions to generate
-          insights and suggestions. When you ask Luna for an analysis, the relevant activity and
-          session data for the period you request is
+          insights and suggestions. When you ask Luna for an analysis, the App first calculates
+          the results on your device and then sends a short summary of the findings for the
+          current day and week (for example, activity names, time totals, streaks and goal
+          progress), never your full session history. Activities for which you turn off
+          “Include in analysis” are left out. This summary is
           <span class="font-semibold text-ink">transmitted securely (encrypted in transit via TLS)</span>
           to <span class="font-semibold text-ink">Google LLC</span>, via the paid tier of the Gemini
           API, solely to generate that analysis. We do not sell this data or share it with
@@ -91,6 +95,23 @@ const EFFECTIVE_DATE = "2026-08-11";
           For details, see RevenueCat's privacy policy at
           <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">revenuecat.com/privacy</a>.
         </p>
+        <p>
+          To understand how the App is used and improve it, the App uses
+          <span class="font-semibold text-ink">Google Analytics for Firebase</span> (Google LLC).
+          It receives:
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Usage events, such as opening Luna, starting or stopping a session (with the activity's category and the session's duration in minutes), creating an activity or goal, exporting a CSV, and viewing or completing a purchase screen.</li>
+          <li>A randomly generated app-instance identifier and basic device information (operating system, App version, device model, country, language).</li>
+        </ul>
+        <p>
+          Firebase Analytics does not receive your name, email, the names you give your
+          activities, or your session history. To protect the Service from abuse, the App also
+          uses <span class="font-semibold text-ink">Firebase App Check</span>, which uses Apple
+          App Attest / DeviceCheck or Google Play Integrity to confirm that requests (such as
+          Luna's analysis) come from a genuine copy of the App. For details, see
+          <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" class="text-accent underline underline-offset-4">Privacy and Security in Firebase</a>.
+        </p>
 
         <h3 class="text-base font-bold text-ink pt-4">2.4 Payments</h3>
         <p>
@@ -102,7 +123,9 @@ const EFFECTIVE_DATE = "2026-08-11";
 
         <h3 class="text-base font-bold text-ink pt-4">2.5 Notifications and Live Activities</h3>
         <p>
-          On Android, the App can send you local reminders while a session is running. These
+          If you allow notifications, the App can send you local reminders: a weekly summary on
+          Mondays, a heads-up when your streak is about to break, a nudge if you haven't tracked
+          anything for a few days, and, on Android, a reminder while a session is running. These
           notifications are scheduled and delivered locally by your device's operating system; no
           data is transmitted to us. You can disable notifications at any time in your system
           settings.
@@ -128,7 +151,7 @@ const EFFECTIVE_DATE = "2026-08-11";
         </p>
         <ul class="list-disc pl-6 space-y-1">
           <li><span class="font-semibold text-ink">Performance of a contract</span> (Art. 6(1)(b)) — to validate purchases, provide Pro features, and generate Luna's analysis when you request it.</li>
-          <li><span class="font-semibold text-ink">Legitimate interests</span> (Art. 6(1)(f)) — to detect fraudulent purchases and maintain the integrity of the purchase system.</li>
+          <li><span class="font-semibold text-ink">Legitimate interests</span> (Art. 6(1)(f)) — to detect fraudulent purchases and maintain the integrity of the purchase system, to protect the Service from abuse (Firebase App Check), and to understand in aggregate how the App is used so we can improve it (Firebase Analytics).</li>
           <li><span class="font-semibold text-ink">Legal obligation</span> (Art. 6(1)(c)) — to comply with tax, accounting and consumer-protection laws applicable to digital sales.</li>
         </ul>
         <p>
@@ -146,6 +169,7 @@ const EFFECTIVE_DATE = "2026-08-11";
         </p>
         <ul class="list-disc pl-6 space-y-1">
           <li>Google LLC (Gemini API) — to generate Luna's analysis, as described in section 2.2.</li>
+          <li>Google LLC (Firebase Analytics and App Check) — usage statistics and abuse protection, as described in section 2.3.</li>
           <li>RevenueCat, Inc. — purchase processing and entitlement management.</li>
           <li>Apple Inc. and Google LLC — payment processing, subscription management, and platform distribution.</li>
         </ul>
@@ -172,6 +196,10 @@ const EFFECTIVE_DATE = "2026-08-11";
           Data sent to Luna for analysis is retained only for as long as needed to provide the
           feature, and is deleted when no longer needed for that purpose or upon your deletion
           request.
+        </p>
+        <p>
+          Usage events collected by Firebase Analytics are retained for up to 14 months and then
+          deleted automatically.
         </p>
         <p>
           Anonymous purchase records held by RevenueCat are retained for as long as required to
@@ -214,8 +242,8 @@ const EFFECTIVE_DATE = "2026-08-11";
           (as those terms are defined under the CCPA/CPRA). Categories of personal information
           collected in the past 12 months are limited to: identifiers (anonymous user ID),
           commercial information (purchase records), internet or other electronic network activity
-          (basic device information transmitted with purchase events), and, if you use Luna, the
-          activity and session data you submit for analysis. If the activities you choose to have
+          (basic device information and in-app usage events), and, if you use Luna, the
+          summary of activity and session data you submit for analysis. If the activities you choose to have
           Luna analyze relate to your health or wellness (for example, an activity you've labeled
           "therapy" or "exercise"), that information may qualify as sensitive personal information
           under the CPRA. We only process it to generate the analysis you requested, we do not use
@@ -238,12 +266,14 @@ const EFFECTIVE_DATE = "2026-08-11";
           timeframes required by applicable law.
         </p>
 
-        <h2 class="text-xl font-bold text-ink pt-8">8. No Tracking</h2>
+        <h2 class="text-xl font-bold text-ink pt-8">8. Analytics and Tracking</h2>
         <p>
-          Life Visor does not track you across apps or websites. We do not use analytics SDKs,
-          advertising networks, behavioral trackers, or device fingerprinting. We do not request
-          the App Tracking Transparency permission on iOS, and we do not access your advertising
-          identifier on Android.
+          Life Visor does not track you across apps or websites. The only analytics we use are the
+          anonymous in-app usage statistics described in section 2.3, which we use solely to
+          improve the App. We do not use advertising networks, show ads, build advertising
+          profiles, or use device fingerprinting. We do not request the App Tracking Transparency
+          permission on iOS, and we do not use any advertising identifier for advertising or to
+          track you.
         </p>
 
         <h2 class="text-xl font-bold text-ink pt-8">9. Children's Privacy</h2>

@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets";
+import appstoreBadge from "../assets/badge-appstore.svg";
+
+const APP_STORE_URL = "https://apps.apple.com/us/app/life-visor/id6759874795";
+---
+
+<a href={APP_STORE_URL} target="_blank" rel="noopener" class="inline-block transition-transform hover:scale-[1.03]">
+  <Image src={appstoreBadge} alt="Download on the App Store" height={56} class="h-[56px] w-auto" />
+</a>

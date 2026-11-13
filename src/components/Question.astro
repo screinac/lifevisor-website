@@ -1,35 +1,93 @@
 ---
+// Dona de un día de 24 h: lo registrado por colores y, rayado, las horas que "se perdieron".
+// Empieza arriba (12 en punto) y va en sentido horario.
+const R = 200;
+const STROKE = 92;
+const C = 2 * Math.PI * R;
+const GAP = 4; // separación blanca entre segmentos, en px del trazo
+
+const segments = [
+  { hours: 7, color: "#DED7F2" }, // Sleep
+  { hours: 8, color: "#D5EDDC" }, // Work
+  { hours: 2, color: "#F8ECBB" },
+  { hours: 1, color: "#F6DEC4" },
+  { hours: 1, color: "#D3E3F3" },
+  { hours: 5, color: "url(#hatch)" }, // sin registrar
+];
+
+let start = 0;
+const arcs = segments.map((s) => {
+  const len = (s.hours / 24) * C;
+  const arc = { color: s.color, dash: `${len - GAP} ${C - len + GAP}`, offset: -start };
+  start += len;
+  return arc;
+});
 ---
 
-<section class="w-full px-5 sm:px-8 py-20 sm:py-28">
-  <div class="max-w-3xl mx-auto fade-in">
-    <div class="flex items-center gap-3 mb-8">
-      <span class="block w-5 h-[2px] bg-muted-2"></span>
-      <span class="eyebrow text-ink-soft">A QUESTION</span>
+<section class="w-full px-5 sm:px-8 py-14 sm:py-20 overflow-x-clip">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-16 lg:gap-12 items-center fade-in">
+    <div>
+      <span class="eyebrow text-muted-2 block mb-6">A QUESTION</span>
+
+      <h2 class="display text-5xl sm:text-6xl lg:text-[64px] text-ink mb-8">
+        Does it feel like time is <b>slipping away</b> and you don't know where it went?
+      </h2>
+
+      <p class="text-lg sm:text-xl text-ink-soft/90 leading-relaxed max-w-xl">
+        Most apps want your attention. Life Visor wants to give it back — a quiet companion that
+        shows you, day by day, where your hours actually go.
+      </p>
+
+      <div class="mt-10 pt-8 border-t border-line max-w-xl">
+        <p class="text-2xl sm:text-[28px] tracking-tight leading-snug text-ink-soft">
+          We all have the same 24 hours. <b class="text-ink font-bold">You decide how you spend them.</b>
+        </p>
+      </div>
     </div>
 
-    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-8">
-      Does it feel like<br />
-      time is <span class="highlight-purple">slipping away</span>
-      <br />and you don't know where it went?
-    </h2>
-
-    <p class="text-base sm:text-lg text-muted leading-relaxed">
-      Most apps want your attention. Life Visor wants to give it back. It's a quiet companion that
-      shows you, day by day, where your hours actually go — so you can decide what's worth keeping
-      and what isn't.
-    </p>
-
-    <div class="mt-10 flex items-center gap-3 p-4 rounded-2xl border border-line bg-transparent">
-      <div class="w-9 h-9 rounded-xl bg-info flex items-center justify-center shrink-0">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#255687" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
+    <div class="flex justify-center lg:justify-end" aria-hidden="true">
+      <div class="relative w-[300px] h-[300px] sm:w-[440px] sm:h-[440px]">
+        <svg viewBox="0 0 500 500" class="w-full h-full -rotate-90">
+          <defs>
+            <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="12" height="12" fill="#F1EFE9" />
+              <line x1="0" y1="0" x2="0" y2="12" stroke="#BDB8AD" stroke-width="2" />
+            </pattern>
+          </defs>
+          {arcs.map((a) => (
+            <circle
+              cx="250"
+              cy="250"
+              r={R}
+              fill="none"
+              stroke={a.color}
+              stroke-width={STROKE}
+              stroke-dasharray={a.dash}
+              stroke-dashoffset={a.offset}
+            />
+          ))}
         </svg>
+
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <span class="text-6xl sm:text-8xl font-bold tracking-[-0.05em] text-ink leading-none">24h</span>
+          <span class="text-sm sm:text-base text-muted-2 mt-2">one day</span>
+        </div>
+
+        <span class="absolute top-[13%] -left-6 sm:-left-14 flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-bg-card border border-line shadow-sm text-sm sm:text-base font-semibold text-ink whitespace-nowrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#868687" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          5h · where did they go?
+        </span>
+
+        <span class="absolute top-[37%] -right-4 sm:-right-8 px-3.5 sm:px-4 py-2 rounded-full bg-cool text-cool-ink text-sm sm:text-base font-semibold whitespace-nowrap">
+          Sleep 7h
+        </span>
+
+        <span class="absolute bottom-[4%] right-[2%] sm:right-[4%] px-3.5 sm:px-4 py-2 rounded-full bg-accent-bg text-accent text-sm sm:text-base font-semibold whitespace-nowrap">
+          Work 8h
+        </span>
       </div>
-      <p class="text-sm text-ink leading-snug">
-        We all have the same 24 hours. <span class="font-bold">You decide how you spend them.</span>
-      </p>
     </div>
   </div>
 </section>

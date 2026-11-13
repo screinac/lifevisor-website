@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import appIcon from "../assets/app-icon.png";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/life-visor/id6759874795";
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsign.lifevisorapp";
 ---
 
 <header class="w-full px-5 sm:px-8 pt-6">
@@ -13,13 +12,14 @@ const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsig
       <span class="text-lg sm:text-xl text-ink"><span class="font-bold">Life</span> Visor</span>
     </a>
     <div class="flex items-center gap-6">
+      <a href="/#how" class="hidden md:inline text-sm text-muted hover:text-ink transition-colors">How it works</a>
       <a href="/#features" class="hidden sm:inline text-sm text-muted hover:text-ink transition-colors">Features</a>
+      <a href="/#luna" class="hidden sm:inline text-sm text-muted hover:text-ink transition-colors">Luna</a>
       <a href="/#pro" class="hidden sm:inline text-sm text-muted hover:text-ink transition-colors">Pro</a>
       <a
-        href="/#download"
-        data-download
-        data-ios={APP_STORE_URL}
-        data-android={PLAY_STORE_URL}
+        href={APP_STORE_URL}
+        target="_blank"
+        rel="noopener"
         class="text-sm font-medium px-4 py-2 rounded-full bg-ink text-white hover:opacity-90 transition-opacity"
       >
         Download
@@ -28,27 +28,3 @@ const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.devsig
   </nav>
 </header>
 
-<script>
-  const link = document.querySelector<HTMLAnchorElement>("a[data-download]");
-  if (link) {
-    link.addEventListener("click", (e) => {
-      const ua = navigator.userAgent;
-      const isIOS =
-        /iPad|iPhone|iPod/.test(ua) ||
-        (ua.includes("Mac") && navigator.maxTouchPoints > 1);
-      const isAndroid = /android/i.test(ua);
-
-      const target = isIOS
-        ? link.dataset.ios
-        : isAndroid
-          ? link.dataset.android
-          : null;
-
-      if (target) {
-        e.preventDefault();
-        window.location.href = target;
-      }
-      // else: fall through to default href (/#download → scroll to hero)
-    });
-  }
-</script>

@@ -1,20 +1,126 @@
 ---
+import { Image } from "astro:assets";
+import lunaOutline from "../assets/luna/luna-outline.svg";
+
+// Colores de la pantalla de Luna en la app (utils/colors.ts: LUNA_COLOR). El ícono es el mismo
+// luna-outline.svg de la app, con sus colores propios.
+const LUNA = "#FBEBB5";
+const LUNA_TITLE = "#322F24";
+
+// Barrita de color de cada actividad, como en LunaTextGroup (app/luna.tsx).
+const BAR = { reading: "#C5D4AE", work: "#E9D592", exercise: "#EEC6A2", neutral: "#D9D5CC" };
+
+const points = [
+  {
+    title: "Your day and your week",
+    description: "Today vs. yesterday, and this week vs. the same days of last week.",
+  },
+  {
+    title: "Every goal, reviewed",
+    description: "Ahead or behind pace, and how much per day gets you back on track.",
+  },
+  {
+    title: "Your areas of life",
+    description: "How your time splits across work, health, learning and rest.",
+  },
+  {
+    title: "Right for the moment",
+    description: "Mornings and Mondays she gets you going; later she tells you how today went.",
+  },
+];
 ---
 
-<section class="w-full px-5 sm:px-8 py-20 sm:py-28">
-  <div class="max-w-3xl mx-auto fade-in">
-    <div class="flex items-center gap-3 mb-8">
-      <span class="block w-5 h-[2px] bg-muted-2"></span>
-      <span class="eyebrow text-ink-soft">MEET LUNA</span>
+<section id="luna" class="w-full px-3 sm:px-8 py-10 sm:py-14">
+  <div class="max-w-6xl mx-auto fade-in">
+    <div class="rounded-[36px] sm:rounded-[44px] bg-ink text-white px-6 py-12 sm:p-14 lg:p-20 overflow-hidden">
+      <div class="grid lg:grid-cols-[1.15fr_1fr] gap-14 lg:gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-4 mb-10">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-[3px] border-white overflow-hidden flex items-center justify-center" style={`background:${LUNA}`}>
+              <Image src={lunaOutline} alt="Luna" class="w-[94%] h-[94%]" />
+            </div>
+            <a href="#pro" class="px-3 py-1.5 rounded-lg bg-warm text-warm-ink text-sm font-bold tracking-wider uppercase hover:opacity-90 transition-opacity">
+              With Pro
+            </a>
+          </div>
+
+          <h2 class="display text-5xl sm:text-6xl lg:text-[68px] mb-8">
+            Meet <b>Luna</b>. She reads your week for you.
+          </h2>
+
+          <p class="text-lg sm:text-xl text-white/70 leading-relaxed mb-10 max-w-xl">
+            She reviews every goal, tells you what's worth celebrating and what to keep in mind,
+            and finds the patterns in your days you wouldn't spot on your own.
+          </p>
+
+          <div class="space-y-4 max-w-xl">
+            <p class="rounded-3xl bg-white text-ink-soft px-6 py-5 text-base sm:text-lg leading-snug">
+              You've read 4 days in a row — your longest streak so far. Keep it going!
+            </p>
+            <p class="rounded-3xl bg-accent-bg text-accent px-6 py-5 text-base sm:text-lg leading-snug">
+              Exercise is 40 minutes behind last week. About 15 minutes a day gets you back on track.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pantalla de Luna (maqueta, como app/luna.tsx) -->
+        <div class="flex justify-center lg:justify-end" aria-hidden="true">
+          <div class="w-[270px] sm:w-[300px] rounded-[48px] bg-[#2A2C31] p-[10px] shadow-2xl">
+            <div class="rounded-[40px] bg-bg text-ink overflow-hidden aspect-[1206/2622] px-4 pt-12 pb-6 flex flex-col gap-2.5">
+              <p class="text-lg font-bold tracking-tight text-center mb-1">Luna's analysis</p>
+
+              <div class="rounded-2xl px-4 py-4" style={`background:${LUNA}`}>
+                <div class="flex items-center gap-2.5 mb-2.5">
+                  <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden flex items-center justify-center shrink-0" style={`background:${LUNA}`}>
+                    <Image src={lunaOutline} alt="" class="w-[94%] h-[94%]" />
+                  </div>
+                  <p class="text-[9px] font-bold uppercase tracking-wider" style={`color:${LUNA_TITLE}`}>Your week in one sentence</p>
+                </div>
+                <p class="text-[15px] leading-snug font-bold">A <span class="underline decoration-2 decoration-[#E9D592]">strong week</span> for reading, and work is right on pace.</p>
+              </div>
+
+              <p class="text-[10px] font-bold uppercase tracking-wider text-ink/55 mt-1.5">✓ To celebrate</p>
+              <div class="rounded-xl bg-white border border-[#E4E1D8] divide-y divide-[#E4E1D8]">
+                <div class="flex items-center gap-2.5 p-2.5">
+                  <span class="w-[7px] h-7 rounded-full shrink-0" style={`background:${BAR.reading}`}></span>
+                  <p class="text-[11px] leading-snug text-[#3D3A35]"><b>Reading</b>: 4-day streak, your longest yet.</p>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5">
+                  <span class="w-[7px] h-7 rounded-full shrink-0" style={`background:${BAR.work}`}></span>
+                  <p class="text-[11px] leading-snug text-[#3D3A35]">Weekly <b>Work</b> goal: 18h of 20h, ahead of pace.</p>
+                </div>
+              </div>
+
+              <p class="text-[10px] font-bold uppercase tracking-wider text-ink/55 mt-1.5">⚠ Keep in mind</p>
+              <div class="rounded-xl bg-white border border-[#E4E1D8]">
+                <div class="flex items-center gap-2.5 p-2.5">
+                  <span class="w-[7px] h-7 rounded-full shrink-0" style={`background:${BAR.exercise}`}></span>
+                  <p class="text-[11px] leading-snug text-[#3D3A35]"><b>Exercise</b> is behind last week. 15 min a day closes the gap.</p>
+                </div>
+              </div>
+
+              <p class="text-[10px] font-bold uppercase tracking-wider text-ink/55 mt-1.5">Your areas this week</p>
+              <div class="rounded-xl bg-white border border-[#E4E1D8] p-3">
+                <div class="flex h-2.5 rounded-full overflow-hidden">
+                  <span class="w-[46%] bg-[#E9D592]"></span>
+                  <span class="w-[22%] bg-[#C5D4AE]"></span>
+                  <span class="w-[18%] bg-[#EEC6A2]"></span>
+                  <span class="w-[14%] bg-[#A9C8E6]"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-10 border-t border-white/10">
+        {points.map((p) => (
+          <div>
+            <p class="text-base font-semibold mb-1.5">{p.title}</p>
+            <p class="text-sm text-white/60 leading-relaxed">{p.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
-
-    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-8">
-      Meet <span class="highlight-purple">Luna</span>
-    </h2>
-
-    <p class="text-base sm:text-lg text-muted leading-relaxed max-w-2xl">
-      Luna analyzes your days and turns your hours into decisions that bring
-      you closer to the life you want.
-    </p>
   </div>
 </section>

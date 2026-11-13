@@ -1,55 +1,75 @@
 ---
+import { Image } from "astro:assets";
+import feature1 from "../assets/screenshots/feature-1.png";
+import feature2 from "../assets/screenshots/feature-2.png";
+import feature3 from "../assets/screenshots/feature-3.png";
+
+// Cada tarjeta muestra la parte de arriba de una captura dentro de un teléfono que "asoma" desde
+// abajo. Para cambiar las capturas, reemplazá feature-1/2/3.png en src/assets/screenshots.
 const steps = [
   {
-    number: "1",
-    color: "bg-accent-bg",
-    text: "text-accent",
-    title: "Create an activity",
-    description: "Whatever you want to follow: reading, exercise, therapy, work, rest. You choose.",
+    title: "Track",
+    description: "Tap an activity when you start and tap it again when you're done. That simple.",
+    screenshot: feature1,
+    alt: "Tracking an activity in Life Visor",
+    bg: "bg-accent-bg",
+    ink: "text-accent",
+    iconBg: "bg-accent/10",
+    icon: `<polygon points="6 3 20 12 6 21 6 3"/>`,
   },
   {
-    number: "2",
-    color: "bg-cool",
-    text: "text-cool-ink",
-    title: "Start tracking it",
-    description: "One tap and the timer runs. When you're done, one tap and it stops.",
+    title: "Set goals",
+    description: "Decide how much time each activity deserves — per day, week or month — and watch the bar fill up.",
+    screenshot: feature2,
+    alt: "Goals in Life Visor",
+    bg: "bg-peach",
+    ink: "text-peach-ink",
+    iconBg: "bg-peach-ink/10",
+    icon: `<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>`,
   },
   {
-    number: "3",
-    color: "bg-warm",
-    text: "text-warm-ink",
-    title: "Reflect",
-    description: "Look at your patterns. Decide what to adjust.",
+    title: "Level up",
+    description: "Every minute toward a goal earns XP, and hitting it earns a bonus. Your activities grow with you.",
+    screenshot: feature3,
+    alt: "Leveling up an activity in Life Visor",
+    bg: "bg-cool",
+    ink: "text-cool-ink",
+    iconBg: "bg-cool-ink/10",
+    icon: `<polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/>`,
   },
 ];
 ---
 
-<section class="w-full px-5 sm:px-8 py-20 sm:py-28 bg-bg-soft">
-  <div class="max-w-5xl mx-auto fade-in">
-    <div class="flex items-center gap-3 mb-8">
-      <span class="block w-5 h-[2px] bg-muted-2"></span>
-      <span class="eyebrow text-ink-soft">HOW IT WORKS</span>
-    </div>
-
-    <h2 class="text-4xl sm:text-5xl font-bold text-ink leading-[1.1] tracking-tight mb-12 sm:mb-16">
-      In three <span class="highlight-blue">steps</span>
+<section id="how" class="w-full px-5 sm:px-8 py-14 sm:py-20">
+  <div class="max-w-6xl mx-auto fade-in">
+    <span class="eyebrow text-muted-2 block mb-4">How it works</span>
+    <h2 class="display text-5xl sm:text-6xl lg:text-7xl text-ink mb-12 sm:mb-16">
+      Three things, <b>nothing more</b>
     </h2>
 
-    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-      {steps.map((step) => (
-        <div class="bg-bg-card border border-line-soft rounded-3xl p-7 hover:shadow-md transition-shadow">
-          <div class={`w-12 h-12 rounded-xl ${step.color} flex items-center justify-center mb-5`}>
-            <span class={`text-lg font-bold ${step.text}`}>{step.number}</span>
+    <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
+      {steps.map((s) => (
+        <div class={`rounded-[32px] ${s.bg} pt-7 sm:pt-8 px-7 sm:px-8 flex flex-col overflow-hidden`}>
+          <div class={`w-14 h-14 rounded-full ${s.iconBg} ${s.ink} flex items-center justify-center mb-7`}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={s.icon} />
           </div>
-          <h3 class="text-lg font-semibold text-ink mb-2">{step.title}</h3>
-          <p class="text-sm text-muted leading-relaxed">{step.description}</p>
+          <h3 class={`display text-3xl sm:text-4xl ${s.ink} mb-3`}><b>{s.title}</b></h3>
+          <p class="text-base sm:text-lg text-ink-soft leading-relaxed mb-8">{s.description}</p>
+
+          <div class="mt-auto h-[330px] sm:h-[360px] md:h-[300px] lg:h-[360px] overflow-hidden flex justify-center">
+            <div class="w-[82%] max-w-[250px] self-start rounded-t-[38px] bg-ink pt-[8px] px-[8px] shadow-2xl">
+              <div class="rounded-t-[30px] overflow-hidden">
+                <Image src={s.screenshot} alt={s.alt} widths={[300, 600]} sizes="250px" class="w-full h-auto block" />
+              </div>
+            </div>
+          </div>
         </div>
       ))}
     </div>
 
-    <p class="mt-14 max-w-2xl text-base text-muted leading-relaxed">
-      Time is our <span class="font-bold text-ink">most valuable</span> resource. Knowing exactly
-      how we use it can help you orient your life toward what really matters to you.
+    <p class="mt-14 max-w-2xl text-lg text-muted leading-relaxed">
+      Time is our <span class="font-semibold text-ink">most valuable</span> resource. Knowing exactly
+      how you use it helps you orient your life toward what really matters to you.
     </p>
   </div>
 </section>
