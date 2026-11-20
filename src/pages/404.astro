@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import lunaOutline from "../assets/luna/luna-outline.svg";
+
+// Mismos colores que la sección de Luna (components/Luna.astro).
+const LUNA = "#FBEBB5";
+---
+
+<Layout
+  title="Page not found — Life Visor"
+  description="The page you're looking for doesn't exist or has moved."
+>
+  <Navbar />
+
+  <main class="w-full px-5 sm:px-8 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center">
+      <div
+        class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-10 rounded-full border-[3px] border-white shadow-md overflow-hidden flex items-center justify-center"
+        style={`background:${LUNA}`}
+      >
+        <Image src={lunaOutline} alt="Luna" class="w-[94%] h-[94%]" />
+      </div>
+
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="block w-5 h-[2px] bg-muted-2"></span>
+        <span class="eyebrow text-ink-soft">ERROR 404</span>
+        <span class="block w-5 h-[2px] bg-muted-2"></span>
+      </div>
+
+      <h1 class="display text-5xl sm:text-7xl text-ink mb-6">
+        This page <b>got lost</b>.
+      </h1>
+
+      <p class="text-base sm:text-lg text-muted leading-relaxed mb-10 max-w-md mx-auto">
+        Luna looked everywhere, but the page you're after doesn't exist or has moved.
+        Let's get you back to where your time is.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-bg font-semibold text-sm hover:opacity-90 transition-opacity"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
+          </svg>
+          Back to home
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
